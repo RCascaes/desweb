@@ -1,0 +1,74 @@
+|================================================ G E R A L ================================================|
+
+DESCRIÇÃO:
+    Este conteúto constará em todas as páginas.
+
+----------------------------------------------------------------------------------------------|
+
+GERAL:
+    - <header>
+        - <nav>
+            - Inicial;
+            - Projeto;
+            - Sugestão;
+            - Personalização;
+        - Foto;
+        - Nome;
+    
+    <main></main>    
+
+    - <footer>
+        - Redes sociais;
+        - Contato;
+
+|============================================== I N I C I A L ==============================================|
+
+DESCRIÇÃO:
+    Basicamente um blog, conterá uma imagem, minhas informações, formação, experiencias.
+
+----------------------------------------------------------------------------------------------|
+ 
+INICIAL:
+    - <main>
+        - Apresentação;
+        - Formação;
+        - Experiências;
+
+|============================================== P R O J E T O ==============================================|
+
+DESCRIÇÃO:
+    Descreverá o motivo deste projeto, o que está sendo utilizado no projeto.
+
+----------------------------------------------------------------------------------------------|
+ 
+PROJETO:
+    - <main>
+        - Descrição do projeto;
+        - Utilização;
+
+|============================================ S U G E S T Õ E S ============================================|
+
+DESCRIÇÃO:
+    Aqui terá um formulário para que seja enviada uma sugestão qualquer.
+
+----------------------------------------------------------------------------------------------|
+ 
+SUGESTÕES:
+    - <main>
+        - Formulário;
+
+|======================================= P E R S O N A L I Z A Ç Ã O =======================================|
+
+DESCRIÇÃO:
+    Aqui onde pretendo brincar um pouco com JS e CSS, configurações de cores das páginas, 
+    adicionar, alterar e remover conteúdos das páginas, personalizar formulário e etc.
+
+----------------------------------------------------------------------------------------------|
+ 
+PERSONALIZAÇÃO:
+    - <main>
+        - Cores;
+        - Adicionar, alterar e remover conteúdos;
+        - Alterar modelo de formulário;
+
+        
