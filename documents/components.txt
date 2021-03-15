@@ -1,0 +1,12 @@
+|==============================================   H E A D   ================================================|
+
+- Defined language "pt-br";
+- Defined charset "UTF-8";
+- Defined author "Róger Cascaes";
+- Defined title "Projeto 1";
+- Added favicon;
+- Added link of CSS;
+
+|==============================================      ================================================|
+
+

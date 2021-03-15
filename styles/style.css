@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+/* ---------------------------------------- Menu of navigation ----------------------------------------- */
+#navigation {
+    height: 50px;
+    background-color: black;
+}
+
+nav > ul > li {
+    display: block;
+    float: left;
+    margin-left: 20px;
+    line-height: 50px;
+}
+
+a {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+#menuRight {
+    float: right;
+    margin-right: 50px;
+}
+
+#menuLeft {
+    float: left;
+}
+
