@@ -1,9 +1,12 @@
+/* ==========================================   G E N E R A L   ========================================== */
+
 * {
     box-sizing: border-box;
     margin: 0px;
 }
 
-/* ---------------------------------------- Menu of navigation ----------------------------------------- */
+/* ===========================================   N A V B A R   =========================================== */
+
 #navigation {
     height: 50px;
     background-color: black;
@@ -13,14 +16,18 @@ nav > ul > li {
     display: block;
     float: left;
     margin-left: 20px;
-    line-height: 50px;
+    line-height: 49px;
 }
 
-a {
+nav > ul > li > a {
     color: white;
     font-weight: bold;
     font-size: 18px;
     text-decoration: none;
+}
+
+nav > ul > li > a:hover {
+    color: rgb(180, 180, 180);
 }
 
 #menuRight {
@@ -32,3 +39,9 @@ a {
     float: left;
 }
 
+/* ====================================   I M A G E   P R O F I L E   ==================================== */
+
+#sectionHeader {
+    height: 450px;
+    background-color: gray;
+}

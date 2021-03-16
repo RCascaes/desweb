@@ -7,6 +7,19 @@
 - Added favicon;
 - Added link of CSS;
 
-|==============================================      ================================================|
+|============================================   H E A D E R   ==============================================|
+
+NAVBAR:
+    - Defined background color pattern black, with font color white;
+    - Used font pattern;
+    - Defined font color lightgray when hovering the mouse over;
+    - Used list of items and unordered list;
+    - Defined display in blocks, menu of navigation floating the left and configuration 
+      floating the right;
+
+----------------------------------------------------------------------------------------------|
+ 
+IMAGE OF PROFILE:
+    - 
 
 

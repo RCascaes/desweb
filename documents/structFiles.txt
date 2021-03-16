@@ -12,7 +12,7 @@
 
 - background.jpg
 - favicon.png
-- profile.jpg
+- profile.png
 
 |============================================   S C R I P T S   =============================================|
 
