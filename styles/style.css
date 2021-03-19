@@ -5,7 +5,14 @@
     margin: 0px;
 }
 
-/* ===========================================   N A V B A R   =========================================== */
+/* ===========================================   H E A D E R   =========================================== */
+
+#header {
+    height: 450px;
+    background-color: gray;
+}
+
+/* ------------------------------------ NAVBAR ------------------------------------ */
 
 #navigation {
     height: 50px;
@@ -19,15 +26,16 @@ nav > ul > li {
     line-height: 49px;
 }
 
-nav > ul > li > a {
+nav > ul > li > span {
     color: white;
     font-weight: bold;
     font-size: 18px;
     text-decoration: none;
 }
 
-nav > ul > li > a:hover {
+nav > ul > li > span:hover {
     color: rgb(180, 180, 180);
+    cursor: pointer;
 }
 
 #menuRight {
@@ -39,9 +47,33 @@ nav > ul > li > a:hover {
     float: left;
 }
 
-/* ====================================   I M A G E   P R O F I L E   ==================================== */
+/* --------------------------------- IMAGE PROFILE -------------------------------- */
 
-#sectionHeader {
-    height: 450px;
-    background-color: gray;
+#boxImageProfile {
+    width: 225px;
+    height: 225px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#imageProfile {
+    width: 225px;
+    height: 225px;
+    border-radius: 100%;
+}
+
+#imageUploadProfile {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 85%;
+    top: 85%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+}
+
+#imageUploadProfile:hover {
+    cursor: pointer;
 }

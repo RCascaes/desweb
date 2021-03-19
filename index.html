@@ -14,18 +14,23 @@
     <header>
         <nav id="navigation">
             <ul id="menuLeft" class="left">
-                <li><a id="start" href="">Início</a></li>
-                <li><a id="project" href="">Projeto</a></li>
-                <li><a id="suggestion" href="">Sugestão</a></li>
+                <li><span id="start">Início</span></li>
+                <li><span id="project">Projeto</span></li>
+                <li><span id="suggestion">Sugestão</span></li>
             </ul>
             <ul id="menuRight" class="right">
-                <li><a id="configuration" href="">Configuração</a></li>
+                <li><span id="configuration">Configuração</span></li>
             </ul>
         </nav>
 
-        <section id="sectionHeader">
-            <img id="imageProfile" src="images/profile.png" alt="Foto de perfil" title="Foto de perfil">
-        </section>
+        <div id="header" class="start project configuration">
+            <div id="boxImageProfile">
+                <img id="imageProfile" src="images/profile.png" alt="Foto de perfil" title="Foto de perfil">
+                <input type="file" id="uploadProfile" class="configuration" accept="image/*" hidden>
+                <img for="uploadProfile" id="imageUploadProfile" src="images/cam.png" alt="Cam" hidden>
+            </div>
+            
+        </div>
     </header>
 
     <main>
