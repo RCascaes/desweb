@@ -5,21 +5,27 @@
 - Defined author "Róger Cascaes";
 - Defined title "Projeto 1";
 - Added favicon;
-- Added link of CSS;
+- Added link of CSS.
 
 |============================================   H E A D E R   ==============================================|
 
+- Defined height of 450 pixels.
+
+----------------------------------------------------------------------------------------------|
+ 
 NAVBAR:
     - Defined background color pattern black, with font color white;
     - Used font pattern;
     - Defined font color lightgray when hovering the mouse over;
-    - Used list of items and unordered list;
+    - Used list of items, unordered list and span;
     - Defined display in blocks, menu of navigation floating the left and configuration 
-      floating the right;
+      floating the right.
 
 ----------------------------------------------------------------------------------------------|
  
-IMAGE OF PROFILE:
-    - 
+PROFILE IMAGE:
+    - Defined box image in center of the header;
+    - Defined image in circle;
+    - Added button for update image in configurations.
 
 

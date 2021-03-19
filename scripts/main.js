@@ -10,8 +10,8 @@ const mnb_project = document.getElementById("project");
 const mnb_suggestion = document.getElementById("suggestion");
 const mnb_configuration = document.getElementById("configuration");
 
-const img_profile = document.getElementById("imageProfile");
-const img_updateProfile = document.getElementById("imageUploadProfile");
+const img_profile = document.getElementById("profileImage");
+const img_updateProfile = document.getElementById("uploadProfileImage");
 const inp_profile = document.getElementById("uploadProfile");
 
 // =============================================   M A I N   ============================================= //
@@ -30,18 +30,18 @@ img_updateProfile.addEventListener("click", updateImageProfile);
 function enableStart() {
     if (start) {
         return;
-    } else {
-        project = suggestion = configuration = false;
-        start = true;
     }
+    callDisplayHidden();
+    project = suggestion = configuration = false;
+    start = true;
 }
 function enableProject() {
     if (project) {
         return;
-    } else {
-        start = suggestion = configuration = false;
-        project = true;
     }
+    callDisplayHidden();
+    start = suggestion = configuration = false;
+    project = true;
 }
 function enableSuggestion() {
     if (suggestion) {
@@ -54,11 +54,11 @@ function enableSuggestion() {
 function enableConfiguration() {
     if (configuration) { 
         return;
-    } else {
-        configurationsDisplay();
-        start = project = suggestion = false;
-        configuration = true;
     }
+    callDisplayHidden();
+    configurationsDisplay();
+    start = project = suggestion = false;
+    configuration = true;    
 }
 
 function callDisplayHidden(){

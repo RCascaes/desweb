@@ -47,9 +47,9 @@ nav > ul > li > span:hover {
     float: left;
 }
 
-/* --------------------------------- IMAGE PROFILE -------------------------------- */
+/* --------------------------------- PROFILE IMAGE -------------------------------- */
 
-#boxImageProfile {
+#boxProfileImage {
     width: 225px;
     height: 225px;
     position: absolute;
@@ -58,13 +58,13 @@ nav > ul > li > span:hover {
     transform: translate(-50%, -50%);
 }
 
-#imageProfile {
+#profileImage {
     width: 225px;
     height: 225px;
     border-radius: 100%;
 }
 
-#imageUploadProfile {
+#uploadProfileImage {
     width: 40px;
     height: 40px;
     position: absolute;
@@ -74,6 +74,6 @@ nav > ul > li > span:hover {
     border-radius: 100%;
 }
 
-#imageUploadProfile:hover {
+#uploadProfileImage:hover {
     cursor: pointer;
 }
