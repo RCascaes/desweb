@@ -54,7 +54,7 @@ nav > ul > li > span:hover {
     height: 225px;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 40%;
     transform: translate(-50%, -50%);
 }
 
@@ -76,4 +76,20 @@ nav > ul > li > span:hover {
 
 #uploadProfileImage:hover {
     cursor: pointer;
+}
+
+/* --------------------------------- PROFILE NAME -------------------------------- */
+
+#profileName {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 480px;
+    transform: translate(-50%, -50%);
+    font-size: 52px;
+}
+
+.editName {
+    border-style: dotted;
+    background-color: rgba(0, 0, 0, 0.199);
 }

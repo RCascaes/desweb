@@ -1,10 +1,5 @@
 // =====================================   D E C L A R A T I O N S   ===================================== //
 
-let start = true;
-let project = false;
-let suggestion = false;
-let configuration = false;
-
 const mnb_start = document.getElementById("start");
 const mnb_project = document.getElementById("project");
 const mnb_suggestion = document.getElementById("suggestion");
@@ -13,6 +8,13 @@ const mnb_configuration = document.getElementById("configuration");
 const img_profile = document.getElementById("profileImage");
 const img_updateProfile = document.getElementById("uploadProfileImage");
 const inp_profile = document.getElementById("uploadProfile");
+
+const ttl_name = document.getElementById("profileName");
+
+let start = true;
+let project = false;
+let suggestion = false;
+let configuration = false;
 
 // =============================================   M A I N   ============================================= //
 
@@ -86,10 +88,14 @@ function callDisplayHidden(){
 
 function configurationsDisplay() {
     img_updateProfile.removeAttribute("hidden");
+    ttl_name.setAttribute("contenteditable", "true");
+    ttl_name.classList.add("editName");
 }
 
 function configurationsHidden() {
     img_updateProfile.setAttribute("hidden", "on");
+    ttl_name.removeAttribute("contenteditable");
+    ttl_name.classList.remove("editName")
 }
 
 function updateImageProfile() {

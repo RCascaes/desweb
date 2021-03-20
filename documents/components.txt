@@ -14,18 +14,23 @@
 ----------------------------------------------------------------------------------------------|
  
 NAVBAR:
-    - Defined background color pattern black, with font color white;
-    - Used font pattern;
-    - Defined font color lightgray when hovering the mouse over;
-    - Used list of items, unordered list and span;
-    - Defined display in blocks, menu of navigation floating the left and configuration 
-      floating the right.
+  - Defined background color pattern black, with font color white;
+  - Used font pattern;
+  - Defined font color lightgray when hovering the mouse over;
+  - Used list of items, unordered list and span;
+  - Defined display in blocks, menu of navigation floating the left and configuration 
+    floating the right.
 
 ----------------------------------------------------------------------------------------------|
  
 PROFILE IMAGE:
-    - Defined box image in center of the header;
-    - Defined image in circle;
-    - Added button for update image in configurations.
+  - Defined box image in center of the header;
+  - Defined image in circle;
+  - Added button for update image in configurations.
 
+----------------------------------------------------------------------------------------------|
+ 
+PROFILE NAME:
+  - Added border dotted and background color in configuration;
+  - Defined font size of 52 pixels.
 
