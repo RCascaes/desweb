@@ -12,22 +12,33 @@
 <body>
 
     <header>
-        <nav id="navigation">
-            <ul id="menuLeft" class="left">
+        <div id="boxMenu">
+            <input type="checkbox" id="menu">
+            <label for="menu">&#9776;</label>
+        </div>
+
+        <nav id="navbar" class="navbar">
+            <ul>
                 <li><span id="start">Início</span></li>
                 <li><span id="project">Projeto</span></li>
                 <li><span id="suggestion">Sugestão</span></li>
-            </ul>
-            <ul id="menuRight" class="right">
                 <li><span id="configuration">Configuração</span></li>
             </ul>
         </nav>
 
-        <div id="header">
+        <div id="boxHeader">
             <div id="boxProfileImage">
                 <img id="profileImage" src="images/profile.png" alt="Foto de perfil" title="Foto de perfil">
                 <input type="file" id="uploadProfile" class="configuration" accept="image/*" hidden>
                 <img for="uploadProfile" id="uploadProfileImage" src="images/cam.png" alt="Cam" hidden>
+            </div>
+
+            <div id="boxPersonalData">
+                <ul id="listPersonalData">
+                    <li class="age">Idade: </li>
+                    <li class="email">E-mail: </li>
+                    <li class="phone">Fone: </li>
+                </ul>
             </div>
 
             <h1 id="profileName">Seu nome</h1>
