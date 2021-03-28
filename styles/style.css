@@ -11,7 +11,7 @@
 
 #boxHeader {
     height: 450px;
-    background-color: gray;
+    /* background-color: gray; */
 }
 
 /* ------------------------------------ NAVBAR ------------------------------------ */
@@ -140,8 +140,8 @@ nav ul li {
 #boxPersonalData {
     width: 250px;
     position: relative;
-    left: 45%;
-    top: 115px;
+    left: 40%;
+    top: 100px;
     transform: translate(-50%, -50%);
     white-space: nowrap;
 }
@@ -149,19 +149,91 @@ nav ul li {
 #listPersonalData > li {
     list-style-type: none;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
     padding-top: 5px;
 }
 
 /* --------------------------------- PROFILE NAME -------------------------------- */
 
 #profileName {
+    width: 80%;
     display: block;
     position: relative;
-    left: 50%;
     top: 125px;
+    left: 50%;
     transform: translate(-50%, -50%);
     font-size: 52px;
     text-align: center;
     white-space: nowrap;
+    border-bottom: solid rgba(0, 0, 0, 0.400);
+    border-radius: 10px;
+}
+
+/* =============================================   M A I N   ============================================= */
+
+
+
+/* --------------------------------- CONFIGURATION -------------------------------- */
+
+#configHeader {
+    width: 30%;
+    min-width: 230px;
+    margin: 25px auto;
+    background-color: rgba(0, 0, 0, 0.200);
+    border-radius: 10px;
+    border: 2px dotted rgba(0, 0, 0, 0.400);
+}
+
+fieldset > legend {
+    margin-left: 10%;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#boxLabel {
+    margin-left: 5%;
+    margin-right: 2%;
+    float: left;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: end;
+}
+
+#boxInput {
+    float: left;
+    line-height: 50px;
+}
+
+#boxInput > input {
+    width: 150px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.100);
+    border-color: rgba(0, 0, 0, 0.400);
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+#btnApply {
+    width: 80%;
+    max-width: 300px;
+    height: 40px;
+    background-color: rgb(44, 44, 44);
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+    margin-right: auto;
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    cursor: pointer;
+}
+
+#btnApply:hover {
+    background-color: rgb(65, 65, 65);
+    border: 2px solid rgb(34, 34, 34);
 }

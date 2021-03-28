@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-
     <header>
         <div id="boxMenu">
             <input type="checkbox" id="menu">
@@ -46,7 +45,35 @@
     </header>
 
     <main>
+        <div id="boxConfiguration" hidden>
+            <form action="#">
+                <fieldset id="configHeader">
+                    <legend>C A B E Ç A L H O</legend>
 
+                    <div id="boxLabel">
+                        <label for="inpProfileName">Nome: </label>
+                        <br>
+                        <label for="inpAge">Idade: </label>
+                        <br>
+                        <label for="inpEmail">E-mail: </label>
+                        <br>
+                        <label for="inpPhone">Fone: </label>
+                    </div>
+                    <div id="boxInput">
+                        <input type="text" id="inpProfileName" minlength="3" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" title="Digite um nome" placeholder="Digite seu nome" autofocus>
+                        <br>
+                        <input type="number" id="inpAge" min="0" max="120" maxlength="3" pattern="[0-9]" title="Digite uma idade válida. De 0 à 120" value="0">
+                        <br>
+                        <input type="email" id="inpEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Digite um e-mail válido" placeholder="Digite seu e-mail">
+                        <br>
+                        <input type="tel" id="inpPhone" pattern="\([0-9]{2}\) [9]{1} [0-9]{4}-[0-9]{4}" title="Digite somente números" placeholder="Somente números">    
+                    </div>
+                </fieldset>
+
+                <br>
+                <button id="btnApply">Aplicar</button>
+            </form>
+        </div>
     </main>
 
     <footer>

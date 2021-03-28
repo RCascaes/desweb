@@ -18,8 +18,7 @@ NAVBAR:
   - Used font pattern;
   - Defined font color lightgray when hovering the mouse over;
   - Used list of items, unordered list and span;
-  - Defined display in blocks, menu of navigation floating the left and configuration 
-    floating the right.
+  - Added menu for low resolution, when clicked expands your items.
 
 ----------------------------------------------------------------------------------------------|
  
@@ -30,7 +29,14 @@ PROFILE IMAGE:
 
 ----------------------------------------------------------------------------------------------|
  
+PERSONAL DATA:
+  - Name not accept only numbers;
+  - Age only accept numbers from 0 at 120;
+  - E-mail is checked for necessary characters;
+  - Phone only accept numbers;
+
+----------------------------------------------------------------------------------------------|
+ 
 PROFILE NAME:
-  - Added border dotted and background color in configuration;
   - Defined font size of 52 pixels.
 
