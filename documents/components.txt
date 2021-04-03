@@ -15,10 +15,18 @@
  
 NAVBAR:
   - Defined background color pattern black, with font color white;
-  - Used font pattern;
+  - Used font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   - Defined font color lightgray when hovering the mouse over;
   - Used list of items, unordered list and span;
   - Added menu for low resolution, when clicked expands your items.
+
+----------------------------------------------------------------------------------------------|
+ 
+HEADER IMAGE:
+  - Defined height of 150 pixels;
+  - Defined image in full width;
+  - Added button for update image in configurations;
+  - Defined pattern image random of the site http://source.unsplash.com/random.
 
 ----------------------------------------------------------------------------------------------|
  
@@ -40,3 +48,7 @@ PERSONAL DATA:
 PROFILE NAME:
   - Defined font size of 52 pixels.
 
+
+|============================================   F O O T E R   ==============================================|
+
+- Defined height of 200 pixels.

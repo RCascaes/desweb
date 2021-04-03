@@ -26,9 +26,15 @@
         </nav>
 
         <div id="boxHeader">
+            <div id="boxHeaderImage">
+                <img id="headerImage" src="http://source.unsplash.com/random" alt="Imagem de cabeçalho" title="Imagem de cabeçalho">
+                <input type="file" id="uploadHeader" accept="image/*" hidden>
+                <img for="uploadHeader" id="uploadHeaderImage" src="images/pencil.png" alt="Pencil" hidden>
+            </div>
+
             <div id="boxProfileImage">
                 <img id="profileImage" src="images/profile.png" alt="Foto de perfil" title="Foto de perfil">
-                <input type="file" id="uploadProfile" class="configuration" accept="image/*" hidden>
+                <input type="file" id="uploadProfile" accept="image/*" hidden>
                 <img for="uploadProfile" id="uploadProfileImage" src="images/cam.png" alt="Cam" hidden>
             </div>
 
@@ -77,7 +83,13 @@
     </main>
 
     <footer>
-
+        <div id="boxPersonalData">
+            <ul id="listPersonalData">
+                <li class="age">Idade: </li>
+                <li class="email">E-mail: </li>
+                <li class="phone">Fone: </li>
+            </ul>
+        </div>
     </footer>
 
     <script src="scripts/main.js"></script>

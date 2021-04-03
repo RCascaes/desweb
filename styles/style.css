@@ -64,40 +64,34 @@ nav ul li {
     cursor: pointer;
 }
 
-@media(max-width: 800px) {
-    #boxMenu {
-        background-color: black;
-    }
+/* --------------------------------- HEADER IMAGE -------------------------------- */
 
-    label[for="menu"] {
-        display: block;
-    }
-    
-    .navbar {
-        height: 0px;
-        margin-left: -100%;
-        transition: all .4s;
-    }
+#boxHeaderImage {
+    width: 100%;
+    height: 150px;
+    position: relative;
+}
 
-    .navbarLittle {
-        margin-left: 0px;
-    }
+#headerImage {
+    width: 100%;
+    height: 150px;
+}
 
-    nav ul li {
-        width: 100%;
-        float: none;
-    }
+#uploadHeaderImage {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 90%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    border: 2px solid black;
+    background-color: black;
+}
 
-    .backHeader {
-        margin-top: 0px;
-        transition: all .4s;
-    }
-
-    .pushHeader {
-        position: relative;
-        margin-top: 200px;
-        transition: all .4s;
-    }
+#uploadHeaderImage:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.801);
 }
 
 /* --------------------------------- PROFILE IMAGE -------------------------------- */
@@ -108,7 +102,7 @@ nav ul li {
     height: 225px;
     position: relative;
     left: 50%;
-    top: 180px;
+    top: 30px;
     transform: translate(-50%, -50%);
 }
 
@@ -133,15 +127,17 @@ nav ul li {
 
 #uploadProfileImage:hover {
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.801);
 }
 
 /* --------------------------------- PERSONAL DATA ------------------------------- */
 
 #boxPersonalData {
-    width: 250px;
+    width: 300px;
+    display: block;
     position: relative;
     left: 40%;
-    top: 100px;
+    top: -35px;
     transform: translate(-50%, -50%);
     white-space: nowrap;
 }
@@ -150,7 +146,6 @@ nav ul li {
     list-style-type: none;
     font-weight: bold;
     font-size: 16px;
-    padding-top: 5px;
 }
 
 /* --------------------------------- PROFILE NAME -------------------------------- */
@@ -159,8 +154,8 @@ nav ul li {
     width: 80%;
     display: block;
     position: relative;
-    top: 125px;
     left: 50%;
+    top: -20px;
     transform: translate(-50%, -50%);
     font-size: 52px;
     text-align: center;
@@ -236,4 +231,76 @@ fieldset > legend {
 #btnApply:hover {
     background-color: rgb(65, 65, 65);
     border: 2px solid rgb(34, 34, 34);
+}
+
+/* ===========================================   F O O T E R   =========================================== */
+
+footer {
+    width: 100%;
+    height: 200px;
+    background-color: black;
+    margin-top: 15px;
+    position: relative;
+}
+
+footer > #boxPersonalData {
+    width: 300px;
+    display: block;
+    position: relative;
+    left: 20%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    background-color: rgba(255, 255, 255, 0.103);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.199);
+    padding: 10px;
+    color: white;
+}
+
+@media(max-width: 800px) {
+
+/* ------------------------------------ NAVBAR ------------------------------------ */
+
+    #boxMenu {
+        background-color: black;
+    }
+
+    label[for="menu"] {
+        display: block;
+    }
+    
+    .navbar {
+        height: 0px;
+        margin-left: -100%;
+        transition: all .4s;
+    }
+
+    .navbarLittle {
+        margin-left: 0px;
+    }
+
+    nav ul li {
+        width: 100%;
+        float: none;
+    }
+
+    .backHeader {
+        margin-top: 0px;
+        transition: all .4s;
+    }
+
+    .pushHeader {
+        position: relative;
+        margin-top: 200px;
+        transition: all .4s;
+    }
+
+/* ------------------------------------ FOOTER ------------------------------------ */
+    
+    footer > #boxPersonalData {
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }

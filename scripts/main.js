@@ -17,6 +17,10 @@ const mnb_configuration = document.getElementById("configuration");
 
 const div_header = document.getElementById("boxHeader");
 
+const img_header = document.getElementById("headerImage");
+const img_updateHeader = document.getElementById("uploadHeaderImage");
+const inp_header = document.getElementById("uploadHeader");
+
 const img_profile = document.getElementById("profileImage");
 const img_updateProfile = document.getElementById("uploadProfileImage");
 const inp_profile = document.getElementById("uploadProfile");
@@ -51,6 +55,7 @@ mnb_configuration.addEventListener("click", enableConfiguration);
 
 // -------------------------------------- CONFIGURATIONS -------------------------------------- //
 
+img_updateHeader.addEventListener("click", updateImageHeader);
 img_updateProfile.addEventListener("click", updateImageProfile);
 inp_phone.addEventListener("blur", addNumberPhone);
 btn_apply.addEventListener("click", applyConfiguration);
@@ -133,14 +138,31 @@ function callDisplayHidden(){
 // -------------------------------------- CONFIGURATIONS -------------------------------------- //
 
 function configurationsDisplay() {
+    img_updateHeader.removeAttribute("hidden");
     img_updateProfile.removeAttribute("hidden");
     div_configuration.removeAttribute("hidden");
 }
 
 function configurationsHidden() {
+    img_updateHeader.setAttribute("hidden", "on");
     img_updateProfile.setAttribute("hidden", "on");
     div_configuration.setAttribute("hidden", "on");
 }
+
+function updateImageHeader() {
+    inp_header.click();
+}
+
+window.addEventListener('load', function() {
+    inp_header.addEventListener('change', function() {
+        if (this.files && this.files[0]) {
+            img_header.onload = () => {
+                URL.revokeObjectURL(img_header.src);  // no longer needed, free memory
+            }
+            img_header.src = URL.createObjectURL(this.files[0]); // set src to blob url
+        }
+    });
+});
 
 function updateImageProfile() {
     inp_profile.click();
