@@ -18,7 +18,7 @@ INICIAL:
         - Experiências;
     - <footer>
         - Redes sociais;
-        - Contato;
+        - Contatos;
 
 |============================================   P R O J E T O   =============================================|
 
@@ -41,7 +41,7 @@ PROJETO:
         - Estrutura dos arquivos;
     - <footer>
         - Redes sociais;
-        - Contato;
+        - Contatos;
 
 |===========================================   S U G E S T Ã O   ============================================|
 
@@ -61,7 +61,7 @@ SUGESTÕES:
         - Formulário;
     - <footer>
         - Redes sociais;
-        - Contato;
+        - Contatos;
 
 |=======================================   C O N F I G U R A Ç Ã O   ========================================|
 
@@ -84,6 +84,6 @@ PERSONALIZAÇÃO:
         - Alterar modelo de formulário;
     - <footer>
         - Redes sociais;
-        - Contato;
+        - Contatos;
 
         

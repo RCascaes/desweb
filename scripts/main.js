@@ -31,6 +31,14 @@ const lpd_phone = document.querySelectorAll(".phone");
 
 const ttl_name = document.getElementById("profileName");
 
+// ------------------------------------------ START ------------------------------------------- //
+
+const div_start = document.getElementById("boxStart");
+
+const pha_personalInformations = document.getElementById("personalInformations");
+const pha_academicEducation = document.getElementById("academicEducation");
+const pha_experiences = document.getElementById("experiences");
+
 // -------------------------------------- CONFIGURATIONS -------------------------------------- //
 
 const div_configuration = document.getElementById("boxConfiguration");
@@ -39,6 +47,10 @@ const inp_name = document.getElementById("inpProfileName");
 const inp_age = document.getElementById("inpAge");
 const inp_email = document.getElementById("inpEmail");
 const inp_phone = document.getElementById("inpPhone");
+
+const txt_personalInformations = document.getElementById("txtPersonalInformations");
+const txt_academicEducation = document.getElementById("txtAcademicEducation");
+const txt_experiences = document.getElementById("txtExperiences");
 
 const btn_apply = document.getElementById("btnApply");
 
@@ -57,7 +69,9 @@ mnb_configuration.addEventListener("click", enableConfiguration);
 
 img_updateHeader.addEventListener("click", updateImageHeader);
 img_updateProfile.addEventListener("click", updateImageProfile);
+
 inp_phone.addEventListener("blur", addNumberPhone);
+
 btn_apply.addEventListener("click", applyConfiguration);
 
 // ========================================   F U N C T I O N S   ======================================== //
@@ -81,7 +95,8 @@ function enableStart() {
     if (start) {
         return;
     }
-    callDisplayHidden();
+    hideCurrentScreen();
+    startDisplay();
     project = suggestion = configuration = false;
     start = true;
 }
@@ -90,7 +105,7 @@ function enableProject() {
     if (project) {
         return;
     }
-    callDisplayHidden();
+    hideCurrentScreen();
     start = suggestion = configuration = false;
     project = true;
 }
@@ -99,7 +114,7 @@ function enableSuggestion() {
     if (suggestion) {
         return;
     }
-    callDisplayHidden();
+    hideCurrentScreen();
     start = project = configuration = false;
     suggestion = true;
 }
@@ -108,16 +123,16 @@ function enableConfiguration() {
     if (configuration) { 
         return;
     }
-    callDisplayHidden();
+    hideCurrentScreen();
     configurationsDisplay();
     start = project = suggestion = false;
     configuration = true;    
 }
 
-function callDisplayHidden(){
+function hideCurrentScreen(){
     switch (true) {
         case start:{
-            
+            startHidden();
             break;
         }
         case project:{
@@ -133,6 +148,16 @@ function callDisplayHidden(){
             break;
         }
     }
+}
+
+// ------------------------------------------ START ------------------------------------------- //
+
+function startDisplay() {
+    div_start.removeAttribute("hidden");
+}
+
+function startHidden() {
+    div_start.setAttribute("hidden", "on");
 }
 
 // -------------------------------------- CONFIGURATIONS -------------------------------------- //
@@ -180,14 +205,21 @@ window.addEventListener('load', function() {
 });
 
 function applyConfiguration() {
-    let containsName = inp_name.value.length > 0; 
-    let name = inp_name.value;
-    let containsAge = Number(inp_age.value) > 0;
-    let age = Number(inp_age.value);
-    let containsEmail = inp_email.value.length > 0;
-    let email = inp_email.value;
-    let containsPhone = inp_phone.value.length > 0;
-    let phone = inp_phone.value;
+    const containsName = inp_name.value.length > 0; 
+    const name = inp_name.value;
+    const containsAge = Number(inp_age.value) > 0;
+    const age = Number(inp_age.value);
+    const containsEmail = inp_email.value.length > 0;
+    const email = inp_email.value;
+    const containsPhone = inp_phone.value.length > 0;
+    const phone = inp_phone.value;
+
+    const containsPersonalInformation = txt_personalInformations.value.length > 0;
+    const personalInformations = txt_personalInformations.value;
+    const containsAcademicEducation = txt_academicEducation.value.length > 0;
+    const academicEducation = txt_academicEducation.value;
+    const containsExperiences = txt_experiences.value.length > 0;
+    const experiences = txt_experiences.value;
     
     if (containsName) {
         if (isNaN(name)) {
@@ -211,7 +243,25 @@ function applyConfiguration() {
         if (!phoneVerify(phone)) {
             return;
         }
-        lpd_phone.forEach(phone => phone.textContent = "Fone: " + inp_phone.value);
+        lpd_phone.forEach(element => element.textContent = "Fone: " + phone);
+    }
+
+    if (containsPersonalInformation) {
+        let removeEnter = personalInformations.split("\n");
+        let contentConvert = removeEnter.join("<br>");
+        pha_personalInformations.innerHTML = contentConvert;
+    }
+
+    if (containsAcademicEducation) {
+        let removeEnter = academicEducation.split("\n");
+        let contentConvert = removeEnter.join("<br>");
+        pha_academicEducation.innerHTML = contentConvert;
+    }
+
+    if (containsExperiences) {
+        let removeEnter = experiences.split("\n");
+        let contentConvert = removeEnter.join("<br>");
+        pha_experiences.innerHTML = contentConvert;
     }
 
     inp_name.value = "";

@@ -51,34 +51,70 @@
     </header>
 
     <main>
+<!-- ==========================================   S T A R T   ========================================== -->
+
+        <div id="boxStart">
+            <section>
+                <h2>Informações Pessoais</h2>
+                <p id="personalInformations">Meu nome é Róger, tenho 27 anos, sou gaúcho, já morei em Viamão (dos 0 aos 5 anos), Estância Velha (dos 5 aos 21 anos e dos 26 até então), Cidreira (dos 21 aos 22 anos) e Osório (dos 22 aos 26 anos).</p>
+            </section>
+            <section>
+                <h2>Formação acadêmica</h2>
+                <p id="academicEducation">Técnico em informática. (2010~2012)<br>Tecnólogo em Análise e Desenvolvimento de Sistemas - IFRS. (2016~)</p>
+            </section>
+            <section>
+                <h2>Experiências</h2>
+                <p id="experiences">Em 2012 fiz um estágio de 6 meses em desenvolvimento e trabalhei com a linguagem COBOL. (acredite se quiser Hehehe)<br><br>Depois tive experiências com áreas de manutenção, com Suporte, Implantação, Treinamento e Tester para um sistema de automação comercial e atualmente estou prestando consultoria para um sistema gerenciador de imóveis.</p>
+            </section>
+        </div>
+
+<!-- ==================================   C O N F I G U R A T I O N   ================================== -->
+
         <div id="boxConfiguration" hidden>
-            <form action="#">
-                <fieldset id="configHeader">
-                    <legend>C A B E Ç A L H O</legend>
+            <fieldset id="configHeader">
+                <legend>C A B E Ç A L H O</legend>
 
-                    <div id="boxLabel">
-                        <label for="inpProfileName">Nome: </label>
-                        <br>
-                        <label for="inpAge">Idade: </label>
-                        <br>
-                        <label for="inpEmail">E-mail: </label>
-                        <br>
-                        <label for="inpPhone">Fone: </label>
-                    </div>
-                    <div id="boxInput">
-                        <input type="text" id="inpProfileName" minlength="3" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" title="Digite um nome" placeholder="Digite seu nome" autofocus>
-                        <br>
-                        <input type="number" id="inpAge" min="0" max="120" maxlength="3" pattern="[0-9]" title="Digite uma idade válida. De 0 à 120" value="0">
-                        <br>
-                        <input type="email" id="inpEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Digite um e-mail válido" placeholder="Digite seu e-mail">
-                        <br>
-                        <input type="tel" id="inpPhone" pattern="\([0-9]{2}\) [9]{1} [0-9]{4}-[0-9]{4}" title="Digite somente números" placeholder="Somente números">    
-                    </div>
-                </fieldset>
+                <div id="boxLabel">
+                    <label for="inpProfileName">Nome: </label>
+                    <br>
+                    <label for="inpAge">Idade: </label>
+                    <br>
+                    <label for="inpEmail">E-mail: </label>
+                    <br>
+                    <label for="inpPhone">Fone: </label>
+                </div>
 
+                <div id="boxInput">
+                    <input type="text" id="inpProfileName" minlength="3" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" title="Digite um nome" placeholder="Digite seu nome" autofocus>
+                    <br>
+                    <input type="number" id="inpAge" min="0" max="120" maxlength="3" pattern="[0-9]" title="Digite uma idade válida. De 0 à 120" value="0">
+                    <br>
+                    <input type="email" id="inpEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Digite um e-mail válido" placeholder="Digite seu e-mail">
+                    <br>
+                    <input type="tel" id="inpPhone" pattern="\([0-9]{2}\) [9]{1} [0-9]{4}-[0-9]{4}" title="Digite somente números" placeholder="Somente números">    
+                </div>
+            </fieldset>
+
+            <fieldset id="configStart">
+                <legend>I N Í C I O</legend>
+
+                <label for="txtPersonalInformations">Informações Pessoais</label>
                 <br>
-                <button id="btnApply">Aplicar</button>
-            </form>
+                <textarea id="txtPersonalInformations" cols="30" rows="5"></textarea>
+                
+                <br><br>
+                <label for="txtAcademicEducation">Formação Acadêmica</label>
+                <br>
+                <textarea id="txtAcademicEducation" cols="30" rows="5"></textarea>
+
+                <br><br>
+                <label for="txtExperiences">Experiências</label>
+                <br>
+                <textarea id="txtExperiences" cols="30" rows="5"></textarea>
+            </fieldset>
+
+            <br>
+            <button id="btnApply">Aplicar</button>
         </div>
     </main>
 
