@@ -39,6 +39,20 @@ const pha_personalInformations = document.getElementById("personalInformations")
 const pha_academicEducation = document.getElementById("academicEducation");
 const pha_experiences = document.getElementById("experiences");
 
+// ---------------------------------------- PROJECT ------------------------------------------- //
+
+const div_project = document.getElementById("boxProject");
+
+// --------------------------------------- SUGGESTION ----------------------------------------- //
+
+const div_suggestion = document.getElementById("boxSuggestion");
+
+const inp_sugName = document.getElementById("inpSugName");
+const inp_sugEmail = document.getElementById("inpSugEmail");
+const txt_suggestion = document.getElementById("txtSuggestion");
+
+const btn_submit = document.getElementById("btnSubmit");
+
 // -------------------------------------- CONFIGURATIONS -------------------------------------- //
 
 const div_configuration = document.getElementById("boxConfiguration");
@@ -56,7 +70,7 @@ const btn_apply = document.getElementById("btnApply");
 
 // =============================================   M A I N   ============================================= //
 
-// -------------------------------------- HEADER -------------------------------------- //
+// ------------------------------------------ HEADER ------------------------------------------ //
 
 inp_menu.addEventListener("click", openMenu);
 
@@ -64,6 +78,10 @@ mnb_start.addEventListener("click", enableStart);
 mnb_project.addEventListener("click", enableProject);
 mnb_suggestion.addEventListener("click", enableSuggestion);
 mnb_configuration.addEventListener("click", enableConfiguration);
+
+// ---------------------------------------- SUGGESTION ---------------------------------------- //
+
+btn_submit.addEventListener("click", submitSuggestion);
 
 // -------------------------------------- CONFIGURATIONS -------------------------------------- //
 
@@ -106,6 +124,7 @@ function enableProject() {
         return;
     }
     hideCurrentScreen();
+    projectDisplay();
     start = suggestion = configuration = false;
     project = true;
 }
@@ -115,6 +134,7 @@ function enableSuggestion() {
         return;
     }
     hideCurrentScreen();
+    suggestionDisplay();
     start = project = configuration = false;
     suggestion = true;
 }
@@ -136,11 +156,11 @@ function hideCurrentScreen(){
             break;
         }
         case project:{
-            
+            projectHidden();
             break;
         }
         case suggestion:{
-            
+            suggestionHidden();
             break;
         }
         case configuration:{
@@ -158,6 +178,49 @@ function startDisplay() {
 
 function startHidden() {
     div_start.setAttribute("hidden", "on");
+}
+
+// ---------------------------------------- PROJECT ------------------------------------------- //
+
+function projectDisplay() {
+    div_project.removeAttribute("hidden");
+}
+
+function projectHidden() {
+    div_project.setAttribute("hidden", "on");
+}
+
+// --------------------------------------- SUGGESTION ----------------------------------------- //
+
+function suggestionDisplay() {
+    div_suggestion.removeAttribute("hidden");
+}
+
+function suggestionHidden() {
+    div_suggestion.setAttribute("hidden", "on");
+}
+
+function submitSuggestion() {
+    const containsSugName = inp_sugName.value.length > 0;
+    const sugName = inp_sugName.value;
+    const containsSugEmail = inp_sugEmail.value.length > 0;
+    const sugEmail = inp_sugEmail.value;
+    const containsSuggestion = txt_suggestion.value.length > 0;
+    const suggestion = txt_suggestion.value;
+
+    if (!containsSugName || !isNaN(sugName)) {
+        return;
+    }
+
+    if (!containsSugEmail || !emailVerify(sugEmail)) {
+        return;
+    }
+
+    if (!containsSuggestion) {
+        return;
+    }
+
+    console.log("Enviado!");
 }
 
 // -------------------------------------- CONFIGURATIONS -------------------------------------- //
@@ -240,10 +303,9 @@ function applyConfiguration() {
     }
 
     if (containsPhone) {
-        if (!phoneVerify(phone)) {
-            return;
+        if (phoneVerify(phone)) {
+            lpd_phone.forEach(element => element.textContent = "Fone: " + phone);
         }
-        lpd_phone.forEach(element => element.textContent = "Fone: " + phone);
     }
 
     if (containsPersonalInformation) {

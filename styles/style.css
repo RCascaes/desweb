@@ -7,11 +7,15 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+main {
+    max-width: 1000px;
+    margin: auto;
+}
+
 /* ===========================================   H E A D E R   =========================================== */
 
 #boxHeader {
     height: 450px;
-    /* background-color: gray; */
 }
 
 /* ------------------------------------ NAVBAR ------------------------------------ */
@@ -97,7 +101,6 @@ nav ul li {
 /* --------------------------------- PROFILE IMAGE -------------------------------- */
 
 #boxProfileImage {
-    /* background-color: black; */
     width: 225px;
     height: 225px;
     position: relative;
@@ -193,6 +196,65 @@ nav ul li {
     margin-left: 40px;
 }
 
+/* ------------------------------------ PROJECT ------------------------------------ */
+
+#boxProject > section {
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.199);
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.404);
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#boxProject h2 {
+    margin-bottom: 10px;
+}
+
+#boxProject p {
+    margin-left: 20px;
+}
+
+/* ---------------------------------- SUGGESTION ---------------------------------- */
+
+#formSuggestion {
+    width: 60%;
+    min-width: 230px;
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.200);
+    border: 2px dotted rgba(0, 0, 0, 0.400);
+    margin: 25px auto;
+}
+
+#boxSuggestion > section {
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.199);
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.404);
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#boxSuggestion h2 {
+    margin-bottom: 10px;
+}
+
+#boxSuggestion p {
+    margin-left: 20px;
+}
+
 /* --------------------------------- CONFIGURATION -------------------------------- */
 
 fieldset {
@@ -211,7 +273,7 @@ fieldset > legend {
     font-size: 18px;
 }
 
-#boxLabel, #configStart > label {
+.boxLabel, #configStart > label {
     margin-left: 5%;
     margin-right: 2%;
     float: left;
@@ -221,15 +283,16 @@ fieldset > legend {
     text-align: end;
 }
 
-#boxInput {
+.boxInput {
+    width: 73%;
     float: left;
     line-height: 50px;
 }
 
-#boxInput > input {
+.boxInput > input {
     width: 150px;
     height: 30px;
-    background-color: rgba(0, 0, 0, 0.100);
+    background-color: rgb(255, 255, 255);
     border-color: rgba(0, 0, 0, 0.400);
     color: rgb(0, 0, 0);
     border-radius: 5px;
@@ -245,13 +308,19 @@ textarea {
     margin: 0px 10px;
     padding: 5px;
     word-wrap:break-word;
+    border-width: 2px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    border-color: rgba(0, 0, 0, 0.400);
+    color: rgb(0, 0, 0);
+    font-size: 15px;
 }
 
 textarea:last-child {
     margin-bottom: 10px;
 }
 
-#btnApply {
+.btnSubmit {
     width: 80%;
     max-width: 300px;
     height: 40px;
@@ -269,7 +338,7 @@ textarea:last-child {
     cursor: pointer;
 }
 
-#btnApply:hover {
+.btnSubmit:hover {
     background-color: rgb(65, 65, 65);
     border: 2px solid rgb(34, 34, 34);
 }
@@ -300,6 +369,11 @@ footer > #boxPersonalData {
 }
 
 @media(max-width: 800px) {
+    
+    main {
+        max-width: 600px;
+        margin: auto;
+    }
 
 /* ------------------------------------ NAVBAR ------------------------------------ */
 
@@ -335,6 +409,14 @@ footer > #boxPersonalData {
         position: relative;
         margin-top: 200px;
         transition: all .4s;
+    }
+
+/* --------------------------------- SUGGESTION ----------------------------------- */
+
+    #formSuggestion {
+        width: 90%;
+        min-width: 230px;
+        margin: 25px 0px;
     }
 
 /* -------------------------------- CONFIGURATION --------------------------------- */

@@ -51,6 +51,7 @@
     </header>
 
     <main>
+
 <!-- ==========================================   S T A R T   ========================================== -->
 
         <div id="boxStart">
@@ -68,13 +69,69 @@
             </section>
         </div>
 
+<!-- ========================================   P R O J E C T   ======================================== -->
+
+        <div id="boxProject" hidden>
+            <section>
+                <h2>Sobre este projeto</h2>
+                <p>
+                    Estudei HTML e CSS há muitos anos, algo entorno de 11 anos atrás, em meu curso técnico em informática. 
+                    Hoje cursando o ensino superior em análise e desenvolvimento de sistemas acabamos por aprender pouco de 
+                    desenvolvimento web, onde no pouco, utilizamos PHP.
+                    <br><br>
+                    Busquei conhecimentos externos referente a HTML5, CSS3, JS e GIT, e este projeto é para fixar o 
+                    aprendizado e praticar um pouco. Nele estarei buscando aperfeiçoar também a codificação, com boas 
+                    práticas e melhor aproveitamento de código.
+                    <br><br>
+                    Foi utilizado o Trello para organização das etapas de desenvolvimento, o projeto foi dividido em 
+                    partes, onde cada parte era um card, defini prioridades e estipulei data limite para a entrega de cada 
+                    card.
+                </p>
+            </section>
+        </div>
+
+<!-- =====================================   S U G G E S T I O N   ===================================== -->
+
+        <div id="boxSuggestion" hidden>
+            <section>
+                <h2>Aviso:</h2>
+                <p>Como o objetivo é visar o aprendizado utilizando apenas HTML, CSS e JS, esta página não funcionará, uma vez que esta área requer um servidor SMTP e configurações feitas no back-end.</back-end>. </p>
+            </section>
+            
+            <fieldset id="formSuggestion">
+                <legend>S U G E S T Ã O</legend>
+
+                <div class="boxLabel">
+                    <label for="inpSugName">Nome: </label>
+                    <br>
+                    <label for="inpSugEmail">E-mail: </label>
+                </div>
+                            
+                <div class="boxInput">
+                    <input type="text" id="inpSugName" minlength="3" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" title="Digite um nome" placeholder="Digite seu nome" autofocus>
+                    <br>
+                    <input type="email" id="inpSugEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Digite um e-mail válido" placeholder="Digite seu e-mail">
+                </div>
+                    
+                <br>
+                <div class="txtSuggestion"> 
+                    <label for="txtSuggestion" class="boxLabel">Sugestão: </label>
+                    <br>
+                    <textarea id="txtSuggestion" cols="30" rows="5"></textarea>
+                </div>
+            </fieldset>
+
+            <br>
+            <button id="btnSubmit" class="btnSubmit">Enviar</button>
+        </div>
+
 <!-- ==================================   C O N F I G U R A T I O N   ================================== -->
 
         <div id="boxConfiguration" hidden>
             <fieldset id="configHeader">
                 <legend>C A B E Ç A L H O</legend>
 
-                <div id="boxLabel">
+                <div class="boxLabel">
                     <label for="inpProfileName">Nome: </label>
                     <br>
                     <label for="inpAge">Idade: </label>
@@ -84,7 +141,7 @@
                     <label for="inpPhone">Fone: </label>
                 </div>
 
-                <div id="boxInput">
+                <div class="boxInput">
                     <input type="text" id="inpProfileName" minlength="3" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" title="Digite um nome" placeholder="Digite seu nome" autofocus>
                     <br>
                     <input type="number" id="inpAge" min="0" max="120" maxlength="3" pattern="[0-9]" title="Digite uma idade válida. De 0 à 120" value="0">
@@ -114,7 +171,7 @@
             </fieldset>
 
             <br>
-            <button id="btnApply">Aplicar</button>
+            <button id="btnApply" class="btnSubmit">Aplicar</button>
         </div>
     </main>
 
