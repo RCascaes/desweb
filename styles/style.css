@@ -12,10 +12,16 @@ main {
     margin: auto;
 }
 
+.center {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 /* ===========================================   H E A D E R   =========================================== */
 
 #boxHeader {
-    height: 450px;
+    height: 500px;
 }
 
 /* ------------------------------------ NAVBAR ------------------------------------ */
@@ -135,19 +141,19 @@ nav ul li {
 
 /* --------------------------------- PERSONAL DATA ------------------------------- */
 
-#boxPersonalData {
+.boxPersonalData {
     width: 300px;
-    display: block;
-    position: relative;
-    left: 40%;
-    top: -35px;
-    transform: translate(-50%, -50%);
+    top: -20px;
     white-space: nowrap;
+    background-color: rgba(0, 0, 0, 0.103);
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.199);
+    color: rgb(0, 0, 0);
+    padding: 5px;
 }
 
 #listPersonalData > li {
     list-style-type: none;
-    font-weight: bold;
     font-size: 16px;
 }
 
@@ -155,10 +161,8 @@ nav ul li {
 
 #profileName {
     width: 80%;
-    display: block;
     position: relative;
     left: 50%;
-    top: -20px;
     transform: translate(-50%, -50%);
     font-size: 52px;
     text-align: center;
@@ -168,6 +172,32 @@ nav ul li {
 }
 
 /* =============================================   M A I N   ============================================= */
+
+.alertRed {
+    background-color: rgba(255, 0, 0, 0.199);
+    border: 2px solid rgba(255, 0, 0, 0.603);
+}
+
+.alertRed h2 {
+    color: red;
+}
+
+.alertRed p {
+    color: red;
+}
+
+.warningOrange {
+    background-color: #ffa60049;
+    border: 2px solid #ffa600a1;
+}
+
+.warningOrange h2 {
+    color: #ffa600;
+}
+
+.warningOrange p {
+    color: #ffa600;
+}
 
 /* ------------------------------------- START ------------------------------------ */
 
@@ -234,10 +264,9 @@ nav ul li {
     margin: 25px auto;
 }
 
-#boxSuggestion > section {
+section {
     width: 90%;
     background-color: rgba(0, 0, 0, 0.199);
-    display: block;
     position: relative;
     left: 50%;
     transform: translate(-50%);
@@ -353,13 +382,9 @@ footer {
     position: relative;
 }
 
-footer > #boxPersonalData {
+footer > .boxPersonalData {
     width: 300px;
-    display: block;
-    position: relative;
-    left: 20%;
     top: 50%;
-    transform: translate(-50%, -50%);
     white-space: nowrap;
     background-color: rgba(255, 255, 255, 0.103);
     border-radius: 10px;

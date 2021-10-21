@@ -38,7 +38,7 @@
                 <img for="uploadProfile" id="uploadProfileImage" src="images/cam.png" alt="Cam" hidden>
             </div>
 
-            <div id="boxPersonalData">
+            <div class="boxPersonalData center">
                 <ul id="listPersonalData">
                     <li class="age">Idade: </li>
                     <li class="email">E-mail: </li>
@@ -57,15 +57,29 @@
         <div id="boxStart">
             <section>
                 <h2>Informações Pessoais</h2>
-                <p id="personalInformations">Meu nome é Róger, tenho 27 anos, sou gaúcho, já morei em Viamão (dos 0 aos 5 anos), Estância Velha (dos 5 aos 21 anos e dos 26 até então), Cidreira (dos 21 aos 22 anos) e Osório (dos 22 aos 26 anos).</p>
+                <p id="personalInformations">
+                    Meu nome é Róger, tenho 27 anos, sou gaúcho, já morei em Viamão (dos 0 aos 5 anos), Estância Velha 
+                    (dos 5 aos 21 anos e dos 26 até então), Cidreira (dos 21 aos 22 anos) e Osório (dos 22 aos 26 anos).
+                </p>
             </section>
             <section>
                 <h2>Formação acadêmica</h2>
-                <p id="academicEducation">Técnico em informática. (2010~2012)<br>Tecnólogo em Análise e Desenvolvimento de Sistemas - IFRS. (2016~)</p>
+                <p id="academicEducation">
+                    Técnico em informática. (2010~2012)
+                    <br>
+                    Tecnólogo em Análise e Desenvolvimento de Sistemas - IFRS. (2016~)
+                </p>
             </section>
             <section>
                 <h2>Experiências</h2>
-                <p id="experiences">Em 2012 fiz um estágio de 6 meses em desenvolvimento e trabalhei com a linguagem COBOL. (acredite se quiser Hehehe)<br><br>Depois tive experiências com áreas de manutenção, com Suporte, Implantação, Treinamento e Tester para um sistema de automação comercial e atualmente estou prestando consultoria para um sistema gerenciador de imóveis.</p>
+                <p id="experiences">
+                    Em 2012 fiz um estágio de 6 meses em desenvolvimento e trabalhei com a linguagem COBOL. (acredite se 
+                    quiser Hehehe)
+                    <br><br>
+                    Depois tive experiências com áreas de manutenção, com Suporte, Implantação, Treinamento e Tester para 
+                    um sistema de automação comercial e atualmente estou prestando consultoria para um sistema gerenciador 
+                    de imóveis.
+                </p>
             </section>
         </div>
 
@@ -93,9 +107,17 @@
 <!-- =====================================   S U G G E S T I O N   ===================================== -->
 
         <div id="boxSuggestion" hidden>
-            <section>
+            <section class="warningOrange">
                 <h2>Aviso:</h2>
-                <p>Como o objetivo é visar o aprendizado utilizando apenas HTML, CSS e JS, esta página não funcionará, uma vez que esta área requer um servidor SMTP e configurações feitas no back-end.</back-end>. </p>
+                <p>
+                    Como o objetivo é visar o aprendizado utilizando apenas HTML, CSS e JS, esta página não funcionará, 
+                    uma vez que esta área requer um servidor SMTP e configurações feitas no back-end.
+                </p>
+            </section>
+
+            <section id="secSugAlert" class="alertRed" hidden>
+                <h2>Alerta:</h2>
+                <p id="phaSugAlert"></p>
             </section>
             
             <fieldset id="formSuggestion">
@@ -128,6 +150,11 @@
 <!-- ==================================   C O N F I G U R A T I O N   ================================== -->
 
         <div id="boxConfiguration" hidden>
+            <section id="secConfAlert" class="alertRed" hidden>
+                <h2>Alerta:</h2>
+                <p id="phaConfAlert"></p>
+            </section>
+
             <fieldset id="configHeader">
                 <legend>C A B E Ç A L H O</legend>
 
@@ -142,9 +169,9 @@
                 </div>
 
                 <div class="boxInput">
-                    <input type="text" id="inpProfileName" minlength="3" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" title="Digite um nome" placeholder="Digite seu nome" autofocus>
+                    <input type="text" id="inpProfileName" title="Digite um nome" placeholder="Digite seu nome" autofocus>
                     <br>
-                    <input type="number" id="inpAge" min="0" max="120" maxlength="3" pattern="[0-9]" title="Digite uma idade válida. De 0 à 120" value="0">
+                    <input type="number" id="inpAge" min="0" max="120" pattern="[0-9]" title="Digite uma idade válida. De 0 à 120" value="0">
                     <br>
                     <input type="email" id="inpEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Digite um e-mail válido" placeholder="Digite seu e-mail">
                     <br>
@@ -176,7 +203,7 @@
     </main>
 
     <footer>
-        <div id="boxPersonalData">
+        <div class="boxPersonalData center">
             <ul id="listPersonalData">
                 <li class="age">Idade: </li>
                 <li class="email">E-mail: </li>

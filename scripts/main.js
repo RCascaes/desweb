@@ -47,6 +47,9 @@ const div_project = document.getElementById("boxProject");
 
 const div_suggestion = document.getElementById("boxSuggestion");
 
+const pha_sugAlert = document.getElementById("phaSugAlert");
+const sec_sugAlert = document.getElementById("secSugAlert");
+
 const inp_sugName = document.getElementById("inpSugName");
 const inp_sugEmail = document.getElementById("inpSugEmail");
 const txt_suggestion = document.getElementById("txtSuggestion");
@@ -56,6 +59,9 @@ const btn_submit = document.getElementById("btnSubmit");
 // -------------------------------------- CONFIGURATIONS -------------------------------------- //
 
 const div_configuration = document.getElementById("boxConfiguration");
+
+const pha_confAlert = document.getElementById("phaConfAlert");
+const sec_confAlert = document.getElementById("secConfAlert");
 
 const inp_name = document.getElementById("inpProfileName");
 const inp_age = document.getElementById("inpAge");
@@ -198,9 +204,13 @@ function suggestionDisplay() {
 
 function suggestionHidden() {
     div_suggestion.setAttribute("hidden", "on");
+    sec_sugAlert.setAttribute("hidden", "on");
 }
 
 function submitSuggestion() {
+    let message = "Os seguintes campos não foram preenchidos corretamente:";
+    const regex = /[0-9]/;
+
     const containsSugName = inp_sugName.value.length > 0;
     const sugName = inp_sugName.value;
     const containsSugEmail = inp_sugEmail.value.length > 0;
@@ -208,19 +218,36 @@ function submitSuggestion() {
     const containsSuggestion = txt_suggestion.value.length > 0;
     const suggestion = txt_suggestion.value;
 
-    if (!containsSugName || !isNaN(sugName)) {
-        return;
+    if (containsSugName) {
+        if (regex.test(sugName)) {
+            message += "<br>- Campo nome não pode conter números.";
+        }
+        if (sugName.length < 3) {
+            message += "<br>- Campo nome precisa conter ao menos 3 caracteres.";
+        } 
+    } else {
+        message += "<br>- Campo nome é obrigatório.";
     }
 
-    if (!containsSugEmail || !emailVerify(sugEmail)) {
-        return;
+    if (containsSugEmail) {
+        if (!emailVerify(sugEmail)) {
+            message += "<br>- Campo e-mail inválido.";
+        } 
+    } else {
+        message += "<br>- Campo e-mail é obrigatório.";
     }
 
     if (!containsSuggestion) {
-        return;
+        message += "<br>- Campo sugestão é obrigatório.";
     }
 
-    console.log("Enviado!");
+    if (message.includes("<br>")) {
+        sec_sugAlert.removeAttribute("hidden");
+        pha_sugAlert.innerHTML = message;
+    } else {
+        sec_sugAlert.setAttribute("hidden", "on");
+        console.log("Enviado!");
+    }
 }
 
 // -------------------------------------- CONFIGURATIONS -------------------------------------- //
@@ -235,6 +262,7 @@ function configurationsHidden() {
     img_updateHeader.setAttribute("hidden", "on");
     img_updateProfile.setAttribute("hidden", "on");
     div_configuration.setAttribute("hidden", "on");
+    sec_confAlert.setAttribute("hidden", "on");
 }
 
 function updateImageHeader() {
@@ -268,6 +296,9 @@ window.addEventListener('load', function() {
 });
 
 function applyConfiguration() {
+    let message = "Os seguintes campos não foram preenchidos corretamente:";
+    const regex = /[0-9]/;
+
     const containsName = inp_name.value.length > 0; 
     const name = inp_name.value;
     const containsAge = Number(inp_age.value) > 0;
@@ -285,45 +316,59 @@ function applyConfiguration() {
     const experiences = txt_experiences.value;
     
     if (containsName) {
-        if (isNaN(name)) {
+        if (regex.test(name)) {
+            message += "<br>- Campo nome não pode conter números.";
+        } else if (name.length < 3) {
+            message += "<br>- Campo nome precisa conter ao menos 3 caracteres.";
+        } else {
             ttl_name.textContent = name;
         }
     }
 
     if (containsAge) {
-        if (age > 0 && age <= 120) {
+        if (age > 120) {
+            message += "<br>- Campo idade deve ser maior que 0 e menor que 120.";
+        } else {
             lpd_age.forEach(element => element.textContent = "Idade: " + age);
         }
     }
 
     if (containsEmail) {
-        if (emailVerify(email)) {
+        if (!emailVerify(email)) {
+            message += "<br>- Campo e-mail inválido.";
+        } else {
             lpd_email.forEach(element => element.textContent = "E-mail: " + email);
         }
     }
 
     if (containsPhone) {
-        if (phoneVerify(phone)) {
+        if (!phoneVerify(phone)) {
+            message += "<br>- Campo de telefone precisa ter 11 dígitos.";
+        } else {
             lpd_phone.forEach(element => element.textContent = "Fone: " + phone);
         }
     }
 
     if (containsPersonalInformation) {
-        let removeEnter = personalInformations.split("\n");
-        let contentConvert = removeEnter.join("<br>");
+        let contentConvert = removeCode(personalInformations);
         pha_personalInformations.innerHTML = contentConvert;
     }
 
     if (containsAcademicEducation) {
-        let removeEnter = academicEducation.split("\n");
-        let contentConvert = removeEnter.join("<br>");
+        let contentConvert = removeCode(academicEducation);
         pha_academicEducation.innerHTML = contentConvert;
     }
 
     if (containsExperiences) {
-        let removeEnter = experiences.split("\n");
-        let contentConvert = removeEnter.join("<br>");
+        let contentConvert = removeCode(experiences);
         pha_experiences.innerHTML = contentConvert;
+    }
+
+    if (message.includes("<br>")) {
+        sec_confAlert.removeAttribute("hidden");
+        pha_confAlert.innerHTML = message;
+    } else {
+        sec_confAlert.setAttribute("hidden", "on");
     }
 
     inp_name.value = "";
@@ -377,4 +422,20 @@ function phoneVerify() {
 function addNumberPhone(event) {
     var x = event.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,1})(\d{0,4})(\d{0,4})/);
     event.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + ' ' + x[3] + '-' + x[4];
+}
+
+function removeCode(inputText){
+    let remove = inputText.split("<");
+    let add = remove.join("");
+    inputText = add;
+    
+    remove = inputText.split(">");
+    add = remove.join("");
+    inputText = add;
+    
+    remove = inputText.split("\n");
+    add = remove.join("<br>");
+    inputText = add;
+
+    return inputText;
 }
