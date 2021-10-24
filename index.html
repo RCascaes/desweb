@@ -29,16 +29,16 @@
             <div id="boxHeaderImage">
                 <img id="headerImage" src="http://source.unsplash.com/random" alt="Imagem de cabeçalho" title="Imagem de cabeçalho">
                 <input type="file" id="uploadHeader" accept="image/*" hidden>
-                <img for="uploadHeader" id="uploadHeaderImage" src="images/pencil.png" alt="Pencil" hidden>
+                <img for="uploadHeader" id="uploadHeaderImage" class="brdSolid" src="images/pencil.png" alt="Pencil" hidden>
             </div>
 
-            <div id="boxProfileImage">
-                <img id="profileImage" src="images/profile.png" alt="Foto de perfil" title="Foto de perfil">
+            <div id="boxProfileImage" class="center">
+                <img id="profileImage" class="brdSolid" src="images/profile.png" alt="Foto de perfil" title="Foto de perfil">
                 <input type="file" id="uploadProfile" accept="image/*" hidden>
-                <img for="uploadProfile" id="uploadProfileImage" src="images/cam.png" alt="Cam" hidden>
+                <img for="uploadProfile" id="uploadProfileImage" class="brdSolid" src="images/cam.png" alt="Cam" hidden>
             </div>
 
-            <div class="boxPersonalData center">
+            <div id="personalDataHeader" class="personalData center brdSolid rad10">
                 <ul id="listPersonalData">
                     <li class="age">Idade: </li>
                     <li class="email">E-mail: </li>
@@ -46,7 +46,7 @@
                 </ul>
             </div>
 
-            <h1 id="profileName">Seu nome</h1>
+            <h1 id="profileName" class="center rad10">Seu nome</h1>
         </div>
     </header>
 
@@ -55,24 +55,24 @@
 <!-- ==========================================   S T A R T   ========================================== -->
 
         <div id="boxStart">
-            <section>
+            <section class="secConfColor center brdSolid rad10">
                 <h2>Informações Pessoais</h2>
-                <p id="personalInformations">
+                <p id="personalInformations" class="phaMargin">
                     Meu nome é Róger, tenho 27 anos, sou gaúcho, já morei em Viamão (dos 0 aos 5 anos), Estância Velha 
                     (dos 5 aos 21 anos e dos 26 até então), Cidreira (dos 21 aos 22 anos) e Osório (dos 22 aos 26 anos).
                 </p>
             </section>
-            <section>
+            <section class="secConfColor center brdSolid rad10">
                 <h2>Formação acadêmica</h2>
-                <p id="academicEducation">
+                <p id="academicEducation" class="phaMargin">
                     Técnico em informática. (2010~2012)
                     <br>
                     Tecnólogo em Análise e Desenvolvimento de Sistemas - IFRS. (2016~)
                 </p>
             </section>
-            <section>
+            <section class="secConfColor center brdSolid rad10">
                 <h2>Experiências</h2>
-                <p id="experiences">
+                <p id="experiences" class="phaMargin">
                     Em 2012 fiz um estágio de 6 meses em desenvolvimento e trabalhei com a linguagem COBOL. (acredite se 
                     quiser Hehehe)
                     <br><br>
@@ -86,9 +86,9 @@
 <!-- ========================================   P R O J E C T   ======================================== -->
 
         <div id="boxProject" hidden>
-            <section>
+            <section class="secConfColor center brdSolid rad10">
                 <h2>Sobre este projeto</h2>
-                <p>
+                <p class="phaMargin">
                     Estudei HTML e CSS há muitos anos, algo entorno de 11 anos atrás, em meu curso técnico em informática. 
                     Hoje cursando o ensino superior em análise e desenvolvimento de sistemas acabamos por aprender pouco de 
                     desenvolvimento web, onde no pouco, utilizamos PHP.
@@ -107,23 +107,23 @@
 <!-- =====================================   S U G G E S T I O N   ===================================== -->
 
         <div id="boxSuggestion" hidden>
-            <section class="warningOrange">
+            <section class="secConfColor warningOrange center brdSolid rad10">
                 <h2>Aviso:</h2>
-                <p>
+                <p class="phaMargin">
                     Como o objetivo é visar o aprendizado utilizando apenas HTML, CSS e JS, esta página não funcionará, 
                     uma vez que esta área requer um servidor SMTP e configurações feitas no back-end.
                 </p>
             </section>
 
-            <section id="secSugAlert" class="alertRed" hidden>
+            <section id="secSugAlert" class="secConfColor alertRed center brdSolid rad10" hidden>
                 <h2>Alerta:</h2>
-                <p id="phaSugAlert"></p>
+                <p id="phaSugAlert" class="phaMargin"></p>
             </section>
             
-            <fieldset id="formSuggestion">
+            <fieldset id="fdsSuggestion" class="center brdDotted rad10">
                 <legend>S U G E S T Ã O</legend>
 
-                <div class="boxLabel">
+                <div class="fdsLabel">
                     <label for="inpSugName">Nome: </label>
                     <br>
                     <label for="inpSugEmail">E-mail: </label>
@@ -137,28 +137,28 @@
                     
                 <br>
                 <div class="txtSuggestion"> 
-                    <label for="txtSuggestion" class="boxLabel">Sugestão: </label>
+                    <label for="txtSuggestion" class="fdsLabel">Sugestão: </label>
                     <br>
                     <textarea id="txtSuggestion" cols="30" rows="5"></textarea>
                 </div>
             </fieldset>
 
             <br>
-            <button id="btnSubmit" class="btnSubmit">Enviar</button>
+            <button id="btnSubmit" class="btnSubmit center brdSolid rad5">Enviar</button>
         </div>
 
 <!-- ==================================   C O N F I G U R A T I O N   ================================== -->
 
         <div id="boxConfiguration" hidden>
-            <section id="secConfAlert" class="alertRed" hidden>
+            <section id="secConfAlert" class="secConfColor alertRed center brdSolid rad10" hidden>
                 <h2>Alerta:</h2>
-                <p id="phaConfAlert"></p>
+                <p id="phaConfAlert" class="phaMargin"></p>
             </section>
 
-            <fieldset id="configHeader">
+            <fieldset id="configHeader" class="fdsConfig brdDotted rad10">
                 <legend>C A B E Ç A L H O</legend>
 
-                <div class="boxLabel">
+                <div class="fdsLabel">
                     <label for="inpProfileName">Nome: </label>
                     <br>
                     <label for="inpAge">Idade: </label>
@@ -179,31 +179,31 @@
                 </div>
             </fieldset>
 
-            <fieldset id="configStart">
+            <fieldset id="configStart" class="fdsConfig brdDotted rad10">
                 <legend>I N Í C I O</legend>
 
-                <label for="txtPersonalInformations">Informações Pessoais</label>
+                <label for="txtPersonalInformations" class="fdsLabel">Informações Pessoais</label>
                 <br>
                 <textarea id="txtPersonalInformations" cols="30" rows="5"></textarea>
                 
                 <br><br>
-                <label for="txtAcademicEducation">Formação Acadêmica</label>
+                <label for="txtAcademicEducation" class="fdsLabel">Formação Acadêmica</label>
                 <br>
                 <textarea id="txtAcademicEducation" cols="30" rows="5"></textarea>
 
                 <br><br>
-                <label for="txtExperiences">Experiências</label>
+                <label for="txtExperiences" class="fdsLabel">Experiências</label>
                 <br>
                 <textarea id="txtExperiences" cols="30" rows="5"></textarea>
             </fieldset>
 
             <br>
-            <button id="btnApply" class="btnSubmit">Aplicar</button>
+            <button id="btnApply" class="btnSubmit center brdSolid rad5">Aplicar</button>
         </div>
     </main>
 
     <footer>
-        <div class="boxPersonalData center">
+        <div id="personalDataFooter" class="personalData center brdSolid rad10">
             <ul id="listPersonalData">
                 <li class="age">Idade: </li>
                 <li class="email">E-mail: </li>
