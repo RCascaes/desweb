@@ -50,6 +50,8 @@ const div_suggestion = document.getElementById("boxSuggestion");
 const pha_sugAlert = document.getElementById("phaSugAlert");
 const sec_sugAlert = document.getElementById("secSugAlert");
 
+const sec_sugSubmit = document.getElementById("secSugSubmit");
+
 const inp_sugName = document.getElementById("inpSugName");
 const inp_sugEmail = document.getElementById("inpSugEmail");
 const txt_suggestion = document.getElementById("txtSuggestion");
@@ -63,6 +65,8 @@ const div_configuration = document.getElementById("boxConfiguration");
 const pha_confAlert = document.getElementById("phaConfAlert");
 const sec_confAlert = document.getElementById("secConfAlert");
 
+const sec_submit = document.getElementById("secSubmit");
+
 const inp_name = document.getElementById("inpProfileName");
 const inp_age = document.getElementById("inpAge");
 const inp_email = document.getElementById("inpEmail");
@@ -73,6 +77,20 @@ const txt_academicEducation = document.getElementById("txtAcademicEducation");
 const txt_experiences = document.getElementById("txtExperiences");
 
 const btn_apply = document.getElementById("btnApply");
+
+// ------------------------------------------ FOOTER ------------------------------------------ //
+
+const div_showPPandTU = document.getElementById("showPPandTU");
+var btn_ok;
+
+const div_PPandTU = document.getElementById("PPandTU");
+
+const btn_firstPrivacyPolicy = document.getElementById("firstPrivacyPolicy");
+const btn_firstTermsUse = document.getElementById("firstTermsUse");
+const btn_understood = document.getElementById("understood");
+
+const btn_privacyPolicy = document.getElementById("privacyPolicy");
+const btn_termsUse = document.getElementById("termsUse");
 
 // =============================================   M A I N   ============================================= //
 
@@ -97,6 +115,15 @@ img_updateProfile.addEventListener("click", updateImageProfile);
 inp_phone.addEventListener("blur", addNumberPhone);
 
 btn_apply.addEventListener("click", applyConfiguration);
+
+// ------------------------------------------ FOOTER ------------------------------------------ //
+
+btn_firstPrivacyPolicy.addEventListener("click", openPrivacyPolicy);
+btn_firstTermsUse.addEventListener("click", openTermsUse);
+btn_understood.addEventListener("click", understood);
+
+btn_privacyPolicy.addEventListener("click", openPrivacyPolicy);
+btn_termsUse.addEventListener("click", openTermsUse);
 
 // ========================================   F U N C T I O N S   ======================================== //
 
@@ -123,6 +150,8 @@ function enableStart() {
     startDisplay();
     project = suggestion = configuration = false;
     start = true;
+    inp_menu.checked = false;
+    openMenu();
 }
 
 function enableProject() {
@@ -133,6 +162,8 @@ function enableProject() {
     projectDisplay();
     start = suggestion = configuration = false;
     project = true;
+    inp_menu.checked = false;
+    openMenu();
 }
 
 function enableSuggestion() {
@@ -143,6 +174,8 @@ function enableSuggestion() {
     suggestionDisplay();
     start = project = configuration = false;
     suggestion = true;
+    inp_menu.checked = false;
+    openMenu();
 }
 
 function enableConfiguration() {
@@ -152,7 +185,9 @@ function enableConfiguration() {
     hideCurrentScreen();
     configurationsDisplay();
     start = project = suggestion = false;
-    configuration = true;    
+    configuration = true;   
+    inp_menu.checked = false;
+    openMenu(); 
 }
 
 function hideCurrentScreen(){
@@ -205,6 +240,7 @@ function suggestionDisplay() {
 function suggestionHidden() {
     div_suggestion.setAttribute("hidden", "on");
     sec_sugAlert.setAttribute("hidden", "on");
+    sec_sugSubmit.setAttribute("hidden", "on");
 }
 
 function submitSuggestion() {
@@ -242,11 +278,12 @@ function submitSuggestion() {
     }
 
     if (message.includes("<br>")) {
-        sec_sugAlert.removeAttribute("hidden");
         pha_sugAlert.innerHTML = message;
+        sec_sugAlert.removeAttribute("hidden");
+        sec_sugSubmit.setAttribute("hidden", "on");
     } else {
         sec_sugAlert.setAttribute("hidden", "on");
-        console.log("Enviado!");
+        sec_sugSubmit.removeAttribute("hidden");
     }
 }
 
@@ -263,6 +300,7 @@ function configurationsHidden() {
     img_updateProfile.setAttribute("hidden", "on");
     div_configuration.setAttribute("hidden", "on");
     sec_confAlert.setAttribute("hidden", "on");
+    sec_submit.setAttribute("hidden", "on");
 }
 
 function updateImageHeader() {
@@ -276,6 +314,7 @@ window.addEventListener('load', function() {
                 URL.revokeObjectURL(img_header.src);  // no longer needed, free memory
             }
             img_header.src = URL.createObjectURL(this.files[0]); // set src to blob url
+            img_header.removeAttribute("hidden");
         }
     });
 });
@@ -365,10 +404,12 @@ function applyConfiguration() {
     }
 
     if (message.includes("<br>")) {
-        sec_confAlert.removeAttribute("hidden");
         pha_confAlert.innerHTML = message;
+        sec_confAlert.removeAttribute("hidden");
+        sec_submit.setAttribute("hidden", "on");
     } else {
         sec_confAlert.setAttribute("hidden", "on");
+        sec_submit.removeAttribute("hidden");
     }
 
     inp_name.value = "";
@@ -438,4 +479,54 @@ function removeCode(inputText){
     inputText = add;
 
     return inputText;
+}
+
+// ------------------------------------------ FOOTER ------------------------------------------ //
+
+function openPrivacyPolicy() {
+    let addSecPP = `<section class="secPPandTU center brdSolid rad10">
+        <h2>Políticas de Privacidade</h2>
+        <p class="phaMargin">O que está sendo coletado: este projeto não possui base de dados, portanto o nome, idade, e-mail e 
+        telefone inseridos, não serão armazenados em nenhum local.</p>
+        <p class="phaMargin">Qual a finalidade da coleta: a finalidade disto é inteiramente por aprendizado, portando não há coleta 
+        de dados.</p>
+        <p class="phaMargin">Compartilhamento de dados: todos os dados serão armazenados em seus neurônios, uma vez que este projeto
+        não tem onde armazenar os dados, logo, não há o que compartilhar também.</p>
+        <p class="phaMargin">Tempo que os dados serão armazenados: estes dados serão armazenados enquanto estiverem em sua 
+        conciência, e talvez até enquanto estiver em seu subconciente, mas logo cairá no limbo.</p>
+        <p class="phaMargin">O responsável pelos armazenamento dos dados: hehehe.</p>
+        <p class="phaMargin">Direitos dos titulares: você tem todo o direito de solicitar correções, descarte, bloqueio ou 
+        anonimização de dados, até mesmo a revogação do consentimento, de tudo isto que nem é armazenado.</p>
+        <button id="btnOk" class="btnSubmit center brdSolid rad5">OK</button>`;
+    
+    div_showPPandTU.innerHTML = addSecPP;
+    div_showPPandTU.removeAttribute("hidden");
+    
+    btn_ok = document.getElementById("btnOk");
+    btn_ok.addEventListener("click", closePPandTU);
+}
+
+function openTermsUse() {
+    let addSecPP = `<section class="secPPandTU center brdSolid rad10">
+        <h2>Termos de Uso</h2>
+        <p class="phaMargin">Aqui os termos de uso...</p>
+        <p class="phaMargin">Aqui tudo pode ser copiado sem nossa autorização. Também não haverá atualizações de dados.</p>
+        <p class="phaMargin">Nada é salvo neste site, então não há com que se preocupar. Também não nos responsábilizamos por qualquer interferência 
+        de terceiros.</p>
+        <p class="phaMargin">Estes termos e a política de privacidade podem ser alterados a qualquer momento.</p>
+        <button id="btnOk" class="btnSubmit center brdSolid rad5">OK</button>`;
+
+    div_showPPandTU.innerHTML = addSecPP;
+    div_showPPandTU.removeAttribute("hidden");
+    
+    btn_ok = document.getElementById("btnOk");
+    btn_ok.addEventListener("click", closePPandTU);
+}
+
+function closePPandTU() {
+    div_showPPandTU.setAttribute("hidden", "on");
+}
+
+function understood() {
+    div_PPandTU.setAttribute("hidden", "on");
 }

@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Róger Cascaes">
-    <title>Projeto 1</title>
-    <!-- <link rel="icon" href="images/favicon.png"> -->
+    <meta name="description" content="Aqui uma descrição para o Google. Um site para aprendizado desenvolvido em HTML, CSS e JS.">
+    <title>Projeto Aprendizado I</title>
+    <link rel="icon" href="images/logo.webp">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
@@ -27,26 +28,26 @@
 
         <div id="boxHeader">
             <div id="boxHeaderImage">
-                <img id="headerImage" src="http://source.unsplash.com/random" alt="Imagem de cabeçalho" title="Imagem de cabeçalho">
+                <img id="headerImage" alt="Imagem de cabeçalho" title="Imagem de cabeçalho" hidden>
                 <input type="file" id="uploadHeader" accept="image/*" hidden>
-                <img for="uploadHeader" id="uploadHeaderImage" class="brdSolid" src="images/pencil.png" alt="Pencil" hidden>
+                <img for="uploadHeader" id="uploadHeaderImage" class="brdSolid" src="images/pencil.webp" alt="Pencil" hidden>
             </div>
 
             <div id="boxProfileImage" class="center">
-                <img id="profileImage" class="brdSolid" src="images/profile.png" alt="Foto de perfil" title="Foto de perfil">
+                <img id="profileImage" class="brdSolid" src="images/profile.webp" alt="Foto de perfil" title="Foto de perfil">
                 <input type="file" id="uploadProfile" accept="image/*" hidden>
-                <img for="uploadProfile" id="uploadProfileImage" class="brdSolid" src="images/cam.png" alt="Cam" hidden>
+                <img for="uploadProfile" id="uploadProfileImage" class="brdSolid" src="images/cam.webp" alt="Cam" hidden>
             </div>
 
             <div id="personalDataHeader" class="personalData center brdSolid rad10">
-                <ul id="listPersonalData">
+                <ul class="listPersonalData">
                     <li class="age">Idade: </li>
                     <li class="email">E-mail: </li>
                     <li class="phone">Fone: </li>
                 </ul>
             </div>
 
-            <h1 id="profileName" class="center rad10">Seu nome</h1>
+            <h1 id="profileName" class="center">Seu nome</h1>
         </div>
     </header>
 
@@ -120,6 +121,13 @@
                 <p id="phaSugAlert" class="phaMargin"></p>
             </section>
             
+            <section id="secSugSubmit" class="secConfColor submitGreen center brdSolid rad10" hidden>
+                <h2>Envio:</h2>
+                <p class="phaMargin">
+                    Mensagem enviada com sucesso. Agradeço a sua participação.
+                </p>
+            </section>
+            
             <fieldset id="fdsSuggestion" class="center brdDotted rad10">
                 <legend>S U G E S T Ã O</legend>
 
@@ -130,9 +138,9 @@
                 </div>
                             
                 <div class="boxInput">
-                    <input type="text" id="inpSugName" minlength="3" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" title="Digite um nome" placeholder="Digite seu nome" autofocus>
+                    <input type="text" id="inpSugName" title="Digite um nome" placeholder="Digite seu nome" autofocus>
                     <br>
-                    <input type="email" id="inpSugEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Digite um e-mail válido" placeholder="Digite seu e-mail">
+                    <input type="email" id="inpSugEmail" title="Digite um e-mail válido" placeholder="Digite seu e-mail">
                 </div>
                     
                 <br>
@@ -154,6 +162,13 @@
                 <h2>Alerta:</h2>
                 <p id="phaConfAlert" class="phaMargin"></p>
             </section>
+            
+            <section id="secSubmit" class="secConfColor submitGreen center brdSolid rad10" hidden>
+                <h2>Alterações aplicada:</h2>
+                <p class="phaMargin">
+                    Alterações realizadas com sucesso.
+                </p>
+            </section>
 
             <fieldset id="configHeader" class="fdsConfig brdDotted rad10">
                 <legend>C A B E Ç A L H O</legend>
@@ -171,11 +186,11 @@
                 <div class="boxInput">
                     <input type="text" id="inpProfileName" title="Digite um nome" placeholder="Digite seu nome" autofocus>
                     <br>
-                    <input type="number" id="inpAge" min="0" max="120" pattern="[0-9]" title="Digite uma idade válida. De 0 à 120" value="0">
+                    <input type="number" id="inpAge" min="0" max="120" title="Digite uma idade válida. De 0 à 120" value="0">
                     <br>
-                    <input type="email" id="inpEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Digite um e-mail válido" placeholder="Digite seu e-mail">
+                    <input type="email" id="inpEmail" title="Digite um e-mail válido" placeholder="Digite seu e-mail">
                     <br>
-                    <input type="tel" id="inpPhone" pattern="\([0-9]{2}\) [9]{1} [0-9]{4}-[0-9]{4}" title="Digite somente números" placeholder="Somente números">    
+                    <input type="tel" id="inpPhone" title="Digite somente números" placeholder="Somente números">    
                 </div>
             </fieldset>
 
@@ -200,15 +215,33 @@
             <br>
             <button id="btnApply" class="btnSubmit center brdSolid rad5">Aplicar</button>
         </div>
+
+        <div id="showPPandTU" class="fullScreen" hidden></div>
     </main>
+
+<!-- =========================================   F O O T E R   ========================================= -->
 
     <footer>
         <div id="personalDataFooter" class="personalData center brdSolid rad10">
-            <ul id="listPersonalData">
+            <ul class="listPersonalData">
                 <li class="age">Idade: </li>
                 <li class="email">E-mail: </li>
                 <li class="phone">Fone: </li>
             </ul>
+        </div>
+        <div id="copyright" class="center">
+            <div>
+                <img id="logo" src="images/logo.webp" alt="Logotipo" title="Logotipo">
+            </div>
+            <div>
+                <h4>© Developed by Róger Cascaes</h4>
+                <button id="privacyPolicy" class="green">Política de privacidade</button>
+                <button id="termsUse" class="green">Termos de uso</button>
+            </div>
+        </div>
+        <div id="PPandTU">
+            <p>Não usamos cookies e nem outras tecnologias semelhantes, também não recomendamos conteúdo de seu interesse. Ao utilizar este site, que não possui nada útil, você concorda com nada... e as <button id="firstPrivacyPolicy" class="green">políticas de privacidade</button> e <button id="firstTermsUse" class="green">termos em uso</button>.</p>
+            <button id="understood" class="btnSubmit brdSolid rad5">Entendido</button>
         </div>
     </footer>
 

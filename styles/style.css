@@ -7,15 +7,27 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+body::-webkit-scrollbar {
+    width: 8px;
+}
+  
+body::-webkit-scrollbar-track {
+    background: var(--primary-bg-color);
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+}
+
 :root {
     --primary-color: #000;
-    --primary-bg-color: #ccc;
-    --primary-border-color: #888;
-    --primary-font-color: #000;
-    --second-color: #fff;
-    --second-bg-color: #000;
-    --second-border-color: #ccc;
-    --second-font-color: #fff;
+    --primary-bg-color: #888;
+    --primary-border-color: #ccc;
+    --primary-font-color: #fff;
+    --secondary-color: #fff;
+    --secondary-bg-color: #ccc;
+    --secondary-border-color: #888;
+    --secondary-font-color: #000;
 }
 
 main {
@@ -41,8 +53,8 @@ textarea {
     border-width: 2px;
     border-radius: 5px;
     background-color: #fff;
-    border-color: var(--primary-border-color);
-    color: var(--primary-font-color);
+    border-color: var(--secondary-border-color);
+    color: var(--secondary-font-color);
     font-size: 15px;
 }
 
@@ -54,8 +66,8 @@ textarea:last-child {
     width: 90%;
     padding: 10px;
     margin-top: 10px;
-    background-color: var(--primary-bg-color);
-    border-color: var(--primary-border-color);
+    background-color: var(--secondary-bg-color);
+    border-color: var(--secondary-border-color);
 }
 
 .center {
@@ -103,8 +115,8 @@ label[for="menu"] {
     width: 50px;
     height: 50px;
     padding: 5px;
-    background-color: var(--second-bg-color);
-    color: var(--second-font-color);
+    background-color: var(--primary-color);
+    color: var(--primary-font-color);
     text-align: center;
     font-size: 30px;
     cursor: pointer;
@@ -114,7 +126,7 @@ label[for="menu"] {
 .navbar {
     width: 100%;
     height: 51px;
-    background-color: var(--second-bg-color);
+    background-color: var(--primary-color);
 }
 
 nav ul {
@@ -132,14 +144,14 @@ nav ul li {
     display: block;
     text-decoration: none;
     text-align: center;
-    background-color: var(--second-bg-color);
-    color: var(--second-font-color);
+    background-color: var(--primary-color);
+    color: var(--primary-font-color);
     font-weight: bold;
     font-size: 18px;
 }
 
 .navbar span:hover {
-    color: #ccc;
+    color: var(--primary-border-color);
     cursor: pointer;
 }
 
@@ -147,8 +159,9 @@ nav ul li {
 
 #boxHeaderImage {
     width: 100%;
-    height: 140px;
+    height: 200px;
     position: relative;
+    background-color: var(--primary-color);
 }
 
 #headerImage {
@@ -170,7 +183,7 @@ nav ul li {
 
 #uploadHeaderImage:hover {
     cursor: pointer;
-    background-color: var(--primary-color);
+    background-color: #000;
 }
 
 /* --------------------------------- PROFILE IMAGE -------------------------------- */
@@ -178,6 +191,7 @@ nav ul li {
 #boxProfileImage {
     width: 225px;
     height: 225px;
+    margin-top: -60px;
 }
 
 #profileImage {
@@ -201,7 +215,7 @@ nav ul li {
 
 #uploadProfileImage:hover {
     cursor: pointer;
-    background-color: var(--primary-color);
+    background-color: #000;
 }
 
 /* --------------------------------- PERSONAL DATA ------------------------------- */
@@ -214,12 +228,13 @@ nav ul li {
 }
 
 .personalData {
-    width: 300px;
+    width: max-content;
+    min-width: 300px;
     white-space: nowrap;
     padding: 10px;
 }
 
-#listPersonalData > li {
+.listPersonalData > li {
     list-style-type: none;
     font-size: 16px;
 }
@@ -227,11 +242,12 @@ nav ul li {
 /* --------------------------------- PROFILE NAME -------------------------------- */
 
 #profileName {
-    width: 80%;
+    width: 90%;
+    border-bottom: 2px solid var(--primary-color);
+    color: var(--secondary-font-color);
     font-size: 52px;
     text-align: center;
     white-space: nowrap;
-    border-bottom: solid var(--primary-border-color);
     margin-top: 10px;
 }
 
@@ -247,6 +263,12 @@ nav ul li {
     background-color: #ffe4b1;
     border-color: #f09c00;
     color: #f09c00;
+}
+
+.submitGreen {
+    background-color: #baffb1;
+    border-color: #13a300;
+    color: #13a300;
 }
 
 .fdsLabel {
@@ -279,9 +301,9 @@ nav ul li {
     width: 80%;
     max-width: 300px;
     height: 40px;
-    background-color: #2c2c2c;
-    border-color: #000;
-    color: #fff;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--primary-font-color);
     font-size: 22px;
     font-weight: bold;
     letter-spacing: 5px;
@@ -289,8 +311,9 @@ nav ul li {
 }
 
 .btnSubmit:hover {
-    background-color: #414141;
-    border-color: #222222;
+    background-color: var(--primary-bg-color);
+    border-color: var(--primary-bg-color);
+    color: var(--primary-font-color);
 }
 
 /* ---------------------------------- SUGGESTION ---------------------------------- */
@@ -299,8 +322,8 @@ nav ul li {
     width: 60%;
     min-width: 230px;
     margin-top: 10px;
-    background-color: var(--primary-bg-color);
-    border-color: var(--primary-border-color);
+    background-color: var(--secondary-bg-color);
+    border-color: var(--secondary-border-color);
 }
 
 /* --------------------------------- CONFIGURATION -------------------------------- */
@@ -309,8 +332,8 @@ nav ul li {
     width: 30%;
     min-width: 230px;
     margin: 25px 0px 25px 3%;
-    background-color: var(--primary-bg-color);
-    border-color: var(--primary-border-color);
+    background-color: var(--secondary-bg-color);
+    border-color: var(--secondary-border-color);
     display: inline;
     vertical-align: top;
 }
@@ -319,16 +342,119 @@ nav ul li {
 
 footer {
     width: 100%;
-    height: 200px;
+    height: auto;
     background-color: var(--primary-color);
     margin-top: 10px;
+    position: absolute;
 }
 
 #personalDataFooter {
     background-color: #222;
     border-color: #6e6e6e;
     color: #fff;
-    transform: translate(-50%, 50%);
+    margin: 30px 0px;
+}
+
+#copyright {
+    width: 100%;
+    background-color: #000;
+    border-top: 1px solid var(--secondary-color);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+#copyright h4 {
+    font-weight: normal;
+}
+
+#logo {
+    width: 50px;
+}
+
+#copyright .green {
+    margin-top: 10px;
+}
+
+.green {
+    background-color: #ffffff00;
+    border-color: #ffffff00;
+    color: #37c100;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.green:hover {
+    color: #185300;
+}
+
+#PPandTU {
+    position: fixed;
+    bottom: 0px;
+    background-color: var(--secondary-bg-color);
+    border-color: var(--secondary-border-color);
+    color: var(--secondary-font-color);
+    padding: 15px;
+}
+
+#PPandTU p {
+    width: 80%;
+    float: left;
+}
+
+#understood {
+    width: 15%;
+    min-width: 150px;
+    height: 40px;
+    float: right;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--primary-font-color);
+}
+
+#understood:hover {
+    background-color: var(--primary-bg-color);
+    border-color: var(--primary-bg-color);
+}
+
+.fullScreen {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #000000cc;
+    z-index: 1;
+}
+
+.secPPandTU {
+    width: 80%;
+    height: 80%;
+    padding: 10px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-color: var(--primary-border-color);
+    color: #777;
+    overflow: auto;
+}
+
+.secPPandTU::-webkit-scrollbar {
+    width: 8px;
+}
+  
+.secPPandTU::-webkit-scrollbar-track {
+    background: var(--primary-bg-color);
+    border-radius: 5px;
+}
+  
+.secPPandTU::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+#btnOk {
+    margin-top: 50px;
 }
 
 /* ========================   R E S O L U T I O N   L E S S   T H A N   8 0 0 px  ======================== */
@@ -400,4 +526,19 @@ footer {
         left: 50%;
         transform: translate(-50%, -50%);
     }
-} /* 471 */
+
+    #PPandTU {
+        text-align: center;
+    }
+    
+    #PPandTU p {
+        width: 100%;
+    }
+
+    #understood {
+        width: 50%;
+        height: 30px;
+        margin-top: 15px;
+        float: none;
+    }
+}
