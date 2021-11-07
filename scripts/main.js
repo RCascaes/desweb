@@ -7,7 +7,9 @@ let configuration = false;
 
 // -------------------------------------- HEADER -------------------------------------- //
 
+const div_menu = document.getElementById("boxMenu");
 const inp_menu = document.getElementById("menu");
+const div_littleMenu = document.getElementById("littleMenu");
 const nav_menu = document.getElementById("navbar");
 
 const mnb_start = document.getElementById("start");
@@ -67,6 +69,9 @@ const sec_confAlert = document.getElementById("secConfAlert");
 
 const sec_submit = document.getElementById("secSubmit");
 
+const sel_menu = document.getElementById("fixedMenu");
+const sel_font = document.getElementById("font");
+const sel_sectionStyle = document.getElementById("sectionStyle");
 const inp_name = document.getElementById("inpProfileName");
 const inp_age = document.getElementById("inpAge");
 const inp_email = document.getElementById("inpEmail");
@@ -75,6 +80,11 @@ const inp_phone = document.getElementById("inpPhone");
 const txt_personalInformations = document.getElementById("txtPersonalInformations");
 const txt_academicEducation = document.getElementById("txtAcademicEducation");
 const txt_experiences = document.getElementById("txtExperiences");
+
+const inp_primaryColor = document.getElementById("inpPrimaryColor");
+const inp_primaryFont = document.getElementById("inpPrimaryFont");
+const inp_secondaryColor = document.getElementById("inpSecondaryColor");
+const inp_secondaryFont = document.getElementById("inpSecondaryFont");
 
 const btn_apply = document.getElementById("btnApply");
 
@@ -132,11 +142,13 @@ btn_termsUse.addEventListener("click", openTermsUse);
 function openMenu() {
     let isChecked = inp_menu.checked;
     if (isChecked) {
-        nav_menu.classList.add("navbarLittle");
+        nav_menu.classList.add("pushNavbar");
+        nav_menu.classList.remove("backNavbar");
         div_header.classList.add("pushHeader");
         div_header.classList.remove("backHeader");
     } else {
-        nav_menu.classList.remove("navbarLittle");
+        nav_menu.classList.remove("pushNavbar");
+        nav_menu.classList.add("backNavbar");
         div_header.classList.remove("pushHeader");
         div_header.classList.add("backHeader");
     }
@@ -338,6 +350,12 @@ function applyConfiguration() {
     let message = "Os seguintes campos não foram preenchidos corretamente:";
     const regex = /[0-9]/;
 
+    const menu = sel_menu.value;
+    const font = sel_font.value;
+    const sectionStyle = sel_sectionStyle.value;
+    const secStyle1 = div_start.querySelectorAll(".sectionConfiguration");
+    const secStyle2 = div_start.querySelectorAll(".sectionConfiguration2");
+
     const containsName = inp_name.value.length > 0; 
     const name = inp_name.value;
     const containsAge = Number(inp_age.value) > 0;
@@ -353,7 +371,67 @@ function applyConfiguration() {
     const academicEducation = txt_academicEducation.value;
     const containsExperiences = txt_experiences.value.length > 0;
     const experiences = txt_experiences.value;
+
+    const updatePrimaryColor = inp_primaryColor.value != document.body.style.getPropertyValue('--primary-color');
+    const primaryColor = inp_primaryColor.value;
+    const updatePrimaryFont = inp_primaryFont.value != document.body.style.getPropertyValue('--primary-font-color');
+    const primaryFont = inp_primaryFont.value;
+    const updateSecondaryColor = inp_secondaryColor.value != document.body.style.getPropertyValue('--secondary-color');
+    const secondaryColor = inp_secondaryColor.value;
+    const updateSecondaryFont = inp_secondaryFont.value != document.body.style.getPropertyValue('--secondary-font-color');
+    const secondaryFont = inp_secondaryFont.value;
     
+    switch (menu) {
+        case "1": {
+            div_littleMenu.classList.remove("fixedMenu");
+            nav_menu.classList.remove("fixedMenu");
+            break;
+        }
+        case "2": {
+            div_littleMenu.classList.add("fixedMenu");
+            nav_menu.classList.add("fixedMenu");
+            break;
+        }
+    }
+    switch (font) {
+        case "1": {
+            document.body.style.setProperty("--font-family", "Arial");
+            break;
+        }
+        case "2": {
+            document.body.style.setProperty("--font-family", "Franklin Gothic Medium");
+            break;
+        }
+        case "3": {
+            document.body.style.setProperty("--font-family", "Georgia");
+            break;
+        }
+        case "4": {
+            document.body.style.setProperty("--font-family", "Times New Roman");
+            break;
+        }
+        case "5": {
+            document.body.style.setProperty("--font-family", "Verdana");
+            break;
+        }
+    }
+    switch (sectionStyle) {
+        case "1": {
+            if (secStyle2.length > 0){
+                secStyle2.forEach(element => element.setAttribute("class", "sectionConfiguration center"));
+                div_project.querySelector(".sectionConfiguration2").setAttribute("class", "sectionConfiguration center");
+            }
+            break;
+        }
+        case "2": {
+            if (secStyle1.length > 0){
+                secStyle1.forEach(element => element.setAttribute("class", "sectionConfiguration2 center"));
+                div_project.querySelector(".sectionConfiguration").setAttribute("class", "sectionConfiguration2 center");
+            }
+            break;
+        }
+    }
+
     if (containsName) {
         if (regex.test(name)) {
             message += "<br>- Campo nome não pode conter números.";
@@ -363,7 +441,6 @@ function applyConfiguration() {
             ttl_name.textContent = name;
         }
     }
-
     if (containsAge) {
         if (age > 120) {
             message += "<br>- Campo idade deve ser maior que 0 e menor que 120.";
@@ -371,7 +448,6 @@ function applyConfiguration() {
             lpd_age.forEach(element => element.textContent = "Idade: " + age);
         }
     }
-
     if (containsEmail) {
         if (!emailVerify(email)) {
             message += "<br>- Campo e-mail inválido.";
@@ -379,7 +455,6 @@ function applyConfiguration() {
             lpd_email.forEach(element => element.textContent = "E-mail: " + email);
         }
     }
-
     if (containsPhone) {
         if (!phoneVerify(phone)) {
             message += "<br>- Campo de telefone precisa ter 11 dígitos.";
@@ -392,15 +467,26 @@ function applyConfiguration() {
         let contentConvert = removeCode(personalInformations);
         pha_personalInformations.innerHTML = contentConvert;
     }
-
     if (containsAcademicEducation) {
         let contentConvert = removeCode(academicEducation);
         pha_academicEducation.innerHTML = contentConvert;
     }
-
     if (containsExperiences) {
         let contentConvert = removeCode(experiences);
         pha_experiences.innerHTML = contentConvert;
+    }
+
+    if (updatePrimaryColor) {        
+        document.body.style.setProperty("--primary-color", primaryColor);
+    }
+    if (updatePrimaryFont) {        
+        document.body.style.setProperty("--primary-font-color", primaryFont);
+    }
+    if (updateSecondaryColor) {        
+        document.body.style.setProperty("--secondary-color", secondaryColor);
+    }
+    if (updateSecondaryFont) {        
+        document.body.style.setProperty("--secondary-font-color", secondaryFont);
     }
 
     if (message.includes("<br>")) {

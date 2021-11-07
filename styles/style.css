@@ -4,7 +4,11 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    height: auto;
+    font-family: var(--font-family);
 }
 
 body::-webkit-scrollbar {
@@ -12,7 +16,7 @@ body::-webkit-scrollbar {
 }
   
 body::-webkit-scrollbar-track {
-    background: var(--primary-bg-color);
+    background:#777;
 }
   
 body::-webkit-scrollbar-thumb {
@@ -20,24 +24,21 @@ body::-webkit-scrollbar-thumb {
 }
 
 :root {
-    --primary-color: #000;
-    --primary-bg-color: #888;
-    --primary-border-color: #ccc;
-    --primary-font-color: #fff;
-    --secondary-color: #fff;
-    --secondary-bg-color: #ccc;
-    --secondary-border-color: #888;
-    --secondary-font-color: #000;
+    --font-family: "Arial";
+    --primary-color:#000000;
+    --primary-font-color:#ffffff;
+    --secondary-color:#ffffff;
+    --secondary-font-color:#000000;
 }
 
 main {
-    max-width: 1000px;
     margin: auto;
 }
 
 fieldset > legend {
     margin-left: 10%;
     font-weight: bold;
+    color: var(--primary-color);
     font-size: 18px;
 }
 
@@ -53,8 +54,8 @@ textarea {
     border-width: 2px;
     border-radius: 5px;
     background-color: #fff;
-    border-color: var(--secondary-border-color);
-    color: var(--secondary-font-color);
+    border-color: #777;
+    color: #000;
     font-size: 15px;
 }
 
@@ -62,12 +63,49 @@ textarea:last-child {
     margin-bottom: 10px;
 }
 
-.secConfColor {
+textarea::-webkit-scrollbar {
+    width: 8px;
+}
+  
+textarea::-webkit-scrollbar-track {
+    background: #777;
+    border-radius: 5px;
+}
+  
+textarea::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+.sectionConfiguration {
     width: 90%;
-    padding: 10px;
+    min-width: 300px;
+    max-width: 900px;
     margin-top: 10px;
-    background-color: var(--secondary-bg-color);
-    border-color: var(--secondary-border-color);
+    background-color: #ddd;
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+}
+
+.sectionConfiguration2 {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #ddd;
+    border-top: 1px solid var(--secondary-color);
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.boxContent {
+    width: 90%;
+    max-width: 900px;
+    min-width: 290px;
+    padding: 10px;
+    margin: 0px auto;
+    text-align: left;
+}
+
+#boxStart .boxContent h2, #boxProject .boxContent h2 {
+    color: var(--primary-color);
 }
 
 .center {
@@ -99,6 +137,11 @@ textarea:last-child {
     margin-left: 20px;
 }
 
+.fixedMenu {
+    position: fixed; 
+    z-index: 1;
+}
+
 /* ===========================================   H E A D E R   =========================================== */
 
 #boxHeader {
@@ -106,6 +149,12 @@ textarea:last-child {
 }
 
 /* ------------------------------------ NAVBAR ------------------------------------ */
+
+#boxMenu {
+    width: 100%;
+    height: 50px;
+    background-color: var(--primary-color);
+}
 
 #menu {
     display: none;
@@ -125,7 +174,7 @@ label[for="menu"] {
 
 .navbar {
     width: 100%;
-    height: 51px;
+    height: 50px;
     background-color: var(--primary-color);
 }
 
@@ -135,12 +184,13 @@ nav ul {
 }
 
 nav ul li {
-    width: 150px;
+    width: auto;
+    margin-left: 5px;
     float: left;
 }
 
 .navbar span {
-    padding: 15px;
+    padding: 14px 20px;
     display: block;
     text-decoration: none;
     text-align: center;
@@ -151,7 +201,7 @@ nav ul li {
 }
 
 .navbar span:hover {
-    color: var(--primary-border-color);
+    color: #777;
     cursor: pointer;
 }
 
@@ -161,12 +211,12 @@ nav ul li {
     width: 100%;
     height: 200px;
     position: relative;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
 }
 
 #headerImage {
     width: 100%;
-    height: 200px;
+    height: 100%;
 }
 
 #uploadHeaderImage {
@@ -177,13 +227,13 @@ nav ul li {
     top: 200px;
     transform: translate(-50%, -50%);
     background-color: #0000005f;
-    border-color: var(--primary-border-color);
+    border-color: var(--primary-color);
     border-radius: 100%;
 }
 
 #uploadHeaderImage:hover {
     cursor: pointer;
-    background-color: #000;
+    background-color: var(--primary-color);
 }
 
 /* --------------------------------- PROFILE IMAGE -------------------------------- */
@@ -198,7 +248,7 @@ nav ul li {
     width: 225px;
     height: 225px;
     border-radius: 100%;
-    border-color: var(--primary-border-color);
+    border-color: var(--primary-color);
 }
 
 #uploadProfileImage {
@@ -209,20 +259,20 @@ nav ul li {
     top: 85%;
     transform: translate(-50%, -50%);
     background-color: #0000005f;
-    border-color: var(--primary-border-color);
+    border-color: var(--primary-color);
     border-radius: 100%;
 }
 
 #uploadProfileImage:hover {
     cursor: pointer;
-    background-color: #000;
+    background-color: var(--primary-color);
 }
 
 /* --------------------------------- PERSONAL DATA ------------------------------- */
 
 #personalDataHeader {
-    background-color: #dfdfdf;
-    border-color: #ccc;
+    background-color: #ddd;
+    border-color: var(--secondary-color);
     color: #000;
     margin-top: 10px;
 }
@@ -243,11 +293,10 @@ nav ul li {
 
 #profileName {
     width: 90%;
-    border-bottom: 2px solid var(--primary-color);
-    color: var(--secondary-font-color);
+    border-bottom: 2px solid var(--secondary-color);
+    color: var(--primary-color);
     font-size: 52px;
     text-align: center;
-    white-space: nowrap;
     margin-top: 10px;
 }
 
@@ -282,16 +331,22 @@ nav ul li {
 }
 
 .boxInput {
-    width: 73%;
+    width: auto;
     float: left;
     line-height: 50px;
 }
 
-.boxInput > input {
+.boxInputColor {
+    width: auto;
+    float: left;
+    line-height: 50px;
+}
+
+.boxInput > input, select {
     width: 150px;
     height: 30px;
     background-color: #fff;
-    border-color: #00000066;
+    border: 2px solid #777;
     color: #000;
     border-radius: 5px;
     font-size: 15px;
@@ -308,34 +363,40 @@ nav ul li {
     font-weight: bold;
     letter-spacing: 5px;
     cursor: pointer;
+    font-family: var(--font-family);
 }
 
 .btnSubmit:hover {
-    background-color: var(--primary-bg-color);
-    border-color: var(--primary-bg-color);
-    color: var(--primary-font-color);
+    background-color: var(--secondary-color);
+    border-color: var(--primary-color);
+    color: var(--secondary-font-color);
 }
 
 /* ---------------------------------- SUGGESTION ---------------------------------- */
 
 #fdsSuggestion {
     width: 60%;
-    min-width: 230px;
+    min-width: 300px;
     margin-top: 10px;
-    background-color: var(--secondary-bg-color);
-    border-color: var(--secondary-border-color);
+    background-color: #ddd;
+    border-color: var(--secondary-color);
 }
 
 /* --------------------------------- CONFIGURATION -------------------------------- */
+#boxConfiguration {
+    text-align: center;
+}
 
 .fdsConfig {
     width: 30%;
-    min-width: 230px;
-    margin: 25px 0px 25px 3%;
-    background-color: var(--secondary-bg-color);
-    border-color: var(--secondary-border-color);
+    min-width: 300px;
+    min-height: 400px;
+    margin: 25px 1%;
+    background-color: #ddd;
+    border-color: var(--secondary-color);
     display: inline;
     vertical-align: top;
+    text-align: left;
 }
 
 /* ===========================================   F O O T E R   =========================================== */
@@ -349,8 +410,8 @@ footer {
 }
 
 #personalDataFooter {
-    background-color: #222;
-    border-color: #6e6e6e;
+    background-color: #777;
+    border-color: var(--secondary-color);
     color: #fff;
     margin: 30px 0px;
 }
@@ -382,6 +443,7 @@ footer {
     color: #37c100;
     cursor: pointer;
     font-size: 16px;
+    font-family: var(--font-family);
 }
 
 .green:hover {
@@ -391,30 +453,32 @@ footer {
 #PPandTU {
     position: fixed;
     bottom: 0px;
-    background-color: var(--secondary-bg-color);
-    border-color: var(--secondary-border-color);
-    color: var(--secondary-font-color);
+    background-color: var(--primary-color);
+    border-color: var(--secondary-color);
+    color: var(--primary-font-color);
     padding: 15px;
 }
 
 #PPandTU p {
-    width: 80%;
+    width: 75%;
     float: left;
 }
 
 #understood {
-    width: 15%;
-    min-width: 150px;
+    width: 20%;
+    min-width: 175px;
     height: 40px;
     float: right;
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    color: var(--primary-font-color);
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--secondary-font-color);
+    font-family: var(--font-family);
 }
 
 #understood:hover {
-    background-color: var(--primary-bg-color);
-    border-color: var(--primary-bg-color);
+    background-color: var(--primary-color);
+    border-color: var(--secondary-color);
+    color: var(--primary-font-color);
 }
 
 .fullScreen {
@@ -434,7 +498,7 @@ footer {
     top: 50%;
     transform: translate(-50%, -50%);
     background-color: #fff;
-    border-color: var(--primary-border-color);
+    border-color: #777;
     color: #777;
     overflow: auto;
 }
@@ -444,7 +508,7 @@ footer {
 }
   
 .secPPandTU::-webkit-scrollbar-track {
-    background: var(--primary-bg-color);
+    background: #777;
     border-radius: 5px;
 }
   
@@ -462,28 +526,34 @@ footer {
 @media(max-width: 800px) {
     
     main {
-        max-width: 600px;
+        /* max-width: 600px; */
         margin: auto;
     }
 
 /* ------------------------------------ NAVBAR ------------------------------------ */
 
-    #boxMenu {
+    #littleMenu {
+        width: 100%;
         background-color: var(--primary-color);
+        margin: 0px;
+        top: 0px;
     }
 
     label[for="menu"] {
         display: block;
     }
     
-    .navbar {
-        height: 0px;
-        margin-left: -100%;
-        transition: all .4s;
+    .backNavbar {
+        position: absolute;
+        height: auto;
+        top: -100%;
+        transition: all .5s;
     }
 
-    .navbarLittle {
-        margin-left: 0px;
+    .pushNavbar {
+        height: 200px;
+        top: 50px;
+        transition: all .1s;
     }
 
     nav ul li {
@@ -493,20 +563,20 @@ footer {
 
     .backHeader {
         margin-top: 0px;
-        transition: all .4s;
+        transition: all .1s;
     }
 
     .pushHeader {
         position: relative;
         margin-top: 200px;
-        transition: all .4s;
+        transition: all .5s;
     }
 
 /* --------------------------------- SUGGESTION ----------------------------------- */
 
     #fdsSuggestion {
         width: 90%;
-        min-width: 230px;
+        min-width: 300px;
         margin: 25px 0px;
     }
 
@@ -514,7 +584,7 @@ footer {
     
     .fdsConfig {
         width: 90%;
-        min-width: 230px;
+        min-width: 300px;
         display: block;
         margin: 25px auto;
     }
@@ -533,6 +603,7 @@ footer {
     
     #PPandTU p {
         width: 100%;
+        text-align: left;
     }
 
     #understood {
