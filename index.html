@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Róger Cascaes">
     <meta name="description" content="Aqui uma descrição para o Google. Um site para aprendizado desenvolvido em HTML, CSS e JS.">
-    <title>Projeto Aprendizado I</title>
+    <title>Projeto Aprendizado 1.0</title>
     <link rel="icon" href="images/logo.webp">
     <link rel="stylesheet" href="styles/style.css">
 </head>
@@ -41,7 +41,7 @@
                 <img for="uploadProfile" id="uploadProfileImage" class="brdSolid" src="images/cam.webp" alt="Cam" hidden>
             </div>
 
-            <div id="personalDataHeader" class="personalData center brdSolid rad10">
+            <div id="personalDataHeader" class="personalData center brdSolid">
                 <ul class="listPersonalData">
                     <li class="age">Idade: </li>
                     <li class="email">E-mail: </li>
@@ -54,6 +54,7 @@
     </header>
 
     <main>
+        <div id="showPPandTU" class="fullScreen" hidden></div>
 
 <!-- ==========================================   S T A R T   ========================================== -->
 
@@ -61,7 +62,7 @@
             <section class="sectionConfiguration center">
                 <div class="boxContent">
                     <h2>Informações Pessoais</h2>
-                    <p id="personalInformations" class="phaMargin">
+                    <p id="personalInformations">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quasi eius tenetur quidem nemo! Similique sequi, officia, dolorem accusantium, expedita consequuntur itaque fuga tenetur quidem ducimus harum reiciendis rerum ea?
                         <br>
                         <br>
@@ -69,18 +70,20 @@
                     </p>
                 </div>
             </section>
+
             <section class="sectionConfiguration center">
                 <div class="boxContent">
                     <h2>Formação acadêmica</h2>
-                    <p id="academicEducation" class="phaMargin">
+                    <p id="academicEducation">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quas, ut labore molestiae fugit a non voluptas? Quasi nihil autem provident laboriosam laudantium beatae, dolore ipsum sapiente, sint ut unde.
                     </p>
                 </div>
             </section>
+
             <section class="sectionConfiguration center">
                 <div class="boxContent">
                     <h2>Experiências</h2>
-                    <p id="experiences" class="phaMargin">
+                    <p id="experiences">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero deserunt eos cum ullam, facere facilis deleniti laudantium ducimus earum commodi. Odio consequatur et quae cupiditate quibusdam ea consequuntur facilis blanditiis? 
                         <br><br>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque velit perferendis assumenda repellendus. Ullam quis libero hic aliquid dolorum, nostrum at est deleniti officiis repellat. Facilis asperiores odio maxime ullam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores omnis facilis distinctio incidunt vitae ullam necessitatibus aspernatur ea corporis voluptas corrupti ratione tempore reprehenderit modi aliquid, sapiente veritatis illum dolores.
@@ -94,19 +97,21 @@
         <div id="boxProject" hidden>
             <section class="sectionConfiguration center">
                 <div class="boxContent">
-                    <h2>Sobre este projeto</h2>
-                    <p class="phaMargin">
-                        Estudei HTML e CSS há muitos anos, algo entorno de 11 anos atrás, em meu curso técnico em informática. 
-                        Hoje cursando o ensino superior em análise e desenvolvimento de sistemas acabamos por aprender pouco de 
-                        desenvolvimento web, onde no pouco, utilizamos PHP.
+                    <h2>Sobre o projeto</h2>
+                    <p>
+                        Este projeto tem por objetivo fixar o que aprendi. Recentemente estudei HTML, CSS e JS, e utilizei algumas
+                        ferramentas que contribuem com a organização e segurança do código como Trello e GIT. Neste projeto 
+                        estarei buscando aperfeiçoar também a codificação, com boas práticas e melhor aproveitamento de código.
+                        <br>
+                        Dei uma breve estudada em SEO para o Google e sobre LGPD e Termos de uso.
                         <br><br>
-                        Busquei conhecimentos externos referente a HTML5, CSS3, JS e GIT, e este projeto é para fixar o 
-                        aprendizado e praticar um pouco. Nele estarei buscando aperfeiçoar também a codificação, com boas 
-                        práticas e melhor aproveitamento de código.
+                        O projeto atualmente não trabalha com base de dados, e decidi desenvolver uma SPA (single page application)
+                        que é mais veloz, uma vez que carrega tudo de uma vez. Criei uma página de configurações para "brincar" um 
+                        pouco com o projeto. Também foi pensado na responsividade dele, então é possível ser utilizado em 
+                        dispositivos móveis.
                         <br><br>
-                        Foi utilizado o Trello para organização das etapas de desenvolvimento, o projeto foi dividido em 
-                        partes, onde cada parte era um card, defini prioridades e estipulei data limite para a entrega de cada 
-                        card.
+                        Conforme vou estudando mais ferramentas, irei atualizando este projeto. Os meus próximos passos a princípio
+                        são, relembrar SQL e aprender sobre GitHub, Node.JS e Vue.JS.
                     </p>
                 </div>
             </section>
@@ -115,33 +120,33 @@
 <!-- =====================================   S U G G E S T I O N   ===================================== -->
 
         <div id="boxSuggestion" hidden>
-            <section class="sectionConfiguration warningOrange center">
+            <section class="sectionConfiguration orange center">
                 <div class="boxContent ">
                     <h2>Aviso:</h2>
-                    <p class="phaMargin">
+                    <p>
                         Como o objetivo é visar o aprendizado utilizando apenas HTML, CSS e JS, esta página não funcionará, 
                         uma vez que esta área requer um servidor SMTP e configurações feitas no back-end.
                     </p>
                 </div>
             </section>
 
-            <section id="secSugAlert" class="sectionConfiguration alertRed center" hidden>
+            <section id="secSugAlert" class="sectionConfiguration red center" hidden>
                 <div class="boxContent">
                     <h2>Alerta:</h2>
-                    <p id="phaSugAlert" class="phaMargin"></p>
+                    <p id="phaSugAlert"></p>
                 </div>
             </section>
             
-            <section id="secSugSubmit" class="sectionConfiguration submitGreen center" hidden>
+            <section id="secSugSubmit" class="sectionConfiguration green center" hidden>
                 <div class="boxContent">
                     <h2>Envio:</h2>
-                    <p class="phaMargin">
+                    <p>
                         Mensagem enviada com sucesso. Agradeço a sua participação.
                     </p>
                 </div>
             </section>
             
-            <fieldset id="fdsSuggestion" class="center brdDotted rad10">
+            <fieldset id="fdsSuggestion" class="center">
                 <legend>S U G E S T Ã O</legend>
 
                 <div class="fdsLabel">
@@ -153,7 +158,7 @@
                 </div>
                             
                 <div class="boxInput">
-                    <input type="text" id="inpSugName" title="Digite um nome" placeholder="Digite seu nome" autofocus>
+                    <input type="text" id="inpSugName" title="Digite um nome" placeholder="Digite seu nome">
                     <br>
                     <input type="email" id="inpSugEmail" title="Digite um e-mail válido" placeholder="Digite seu e-mail">
                 </div>
@@ -164,38 +169,64 @@
             </fieldset>
 
             <br>
-            <button id="btnSubmit" class="btnSubmit center brdSolid rad5">Enviar</button>
+            <button id="btnSubmit" class="btnSubmit center brdSolid">Enviar</button>
         </div>
 
 <!-- ==================================   C O N F I G U R A T I O N   ================================== -->
 
         <div id="boxConfiguration" hidden>
-            <section id="secConfAlert" class="sectionConfiguration alertRed center" hidden>
+            <section id="secConfAlert" class="sectionConfiguration red center" hidden>
                 <div class="boxContent ">
                     <h2>Alerta:</h2>
-                    <p id="phaConfAlert" class="phaMargin"></p>
+                    <p id="phaConfAlert"></p>
                 </div>
             </section>
             
-            <section id="secSubmit" class="sectionConfiguration submitGreen center" hidden>
+            <section id="secSubmit" class="sectionConfiguration green center" hidden>
                 <div class="boxContent ">
                     <h2>Alterações aplicada:</h2>
-                    <p class="phaMargin">
+                    <p>
                         Alterações realizadas com sucesso.
                     </p>
                 </div>
             </section>
-            
-            <fieldset id="configHeader" class="fdsConfig brdDotted rad10">
-                <legend>C A B E Ç A L H O</legend>
 
+            <fieldset class="fdsConfig">
+                <legend>G E R A L</legend> 
+                
                 <div class="fdsLabel">
                     <label for="menuFixed">Menu: </label>
                     <br>
                     <label for="font">Fonte: </label>
                     <br>
                     <label for="sectionStyle">Seção: </label>
+                </div>
+
+                <div class="boxInput">
+                    <select id="fixedMenu"> 
+                        <option value="1">Solto</option>
+                        <option value="2">Fixo</option>
+                    </select>
                     <br>
+                    <select id="font"> 
+                        <option value="1">Arial</option>
+                        <option value="2">Franklin Gothic</option>
+                        <option value="3">Georgia</option>
+                        <option value="4">Times New Roman</option>
+                        <option value="5">Verdana</option>                        
+                    </select>
+                    <br>
+                    <select id="sectionStyle"> 
+                        <option value="1">Tipo 1</option>
+                        <option value="2">Tipo 2</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset class="fdsConfig">
+                <legend>C A B E Ç A L H O</legend>
+
+                <div class="fdsLabel">
                     <label for="inpProfileName">Nome: </label>
                     <br>
                     <label for="inpAge">Idade: </label>
@@ -206,25 +237,7 @@
                 </div>
 
                 <div class="boxInput">
-                    <select name="fixedMenu" id="fixedMenu"> 
-                        <option value="1">Solto</option>
-                        <option value="2">Fixo</option>
-                    </select>
-                    <br>
-                    <select name="font" id="font"> 
-                        <option value="1">Arial</option>
-                        <option value="2">Franklin Gothic</option>
-                        <option value="3">Georgia</option>
-                        <option value="4">Times New Roman</option>
-                        <option value="5">Verdana</option>                        
-                    </select>
-                    <br>
-                    <select name="sectionStyle" id="sectionStyle"> 
-                        <option value="1">Tipo 1</option>
-                        <option value="2">Tipo 2</option>
-                    </select>
-                    <br>
-                    <input type="text" id="inpProfileName" title="Digite um nome" placeholder="Digite seu nome" autofocus>
+                    <input type="text" id="inpProfileName" title="Digite um nome" placeholder="Digite seu nome">
                     <br>
                     <input type="number" id="inpAge" min="0" max="120" title="Digite uma idade válida. De 0 à 120" value="0">
                     <br>
@@ -234,7 +247,7 @@
                 </div>
             </fieldset>
 
-            <fieldset id="configColors" class="fdsConfig brdDotted rad10">
+            <fieldset class="fdsConfig">
                 <legend>C O R E S</legend>
 
                 <div class="fdsLabel">
@@ -247,7 +260,7 @@
                     <label for="secondaryFont">Fonte secundária:</label>
                 </div>
                 
-                <div class="boxInputColor">
+                <div class="boxInput">
                     <input type="color" id="inpPrimaryColor" value="#000000">
                     <br>
                     <input type="color" id="inpPrimaryFont" value="#ffffff">
@@ -258,54 +271,54 @@
                 </div>
             </fieldset>
 
-            <fieldset id="configStart" class="fdsConfig brdDotted rad10">
+            <fieldset id="configStart" class="fdsConfig">
                 <legend>I N Í C I O</legend>
 
-                <label for="txtPersonalInformations" class="fdsLabel">Informações Pessoais</label>
+                <label for="txtPersonalInformations" class="fdsLabel">Informações Pessoais:</label>
                 <br>
                 <textarea id="txtPersonalInformations" cols="30" rows="5"></textarea>
                 
                 <br><br>
-                <label for="txtAcademicEducation" class="fdsLabel">Formação Acadêmica</label>
+                <label for="txtAcademicEducation" class="fdsLabel">Formação Acadêmica:</label>
                 <br>
                 <textarea id="txtAcademicEducation" cols="30" rows="5"></textarea>
 
                 <br><br>
-                <label for="txtExperiences" class="fdsLabel">Experiências</label>
+                <label for="txtExperiences" class="fdsLabel">Experiências:</label>
                 <br>
                 <textarea id="txtExperiences" cols="30" rows="5"></textarea>
             </fieldset>
 
             <br>
-            <button id="btnApply" class="btnSubmit brdSolid rad5">Aplicar</button>
+            <button id="btnApply" class="btnSubmit brdSolid">Aplicar</button>
         </div>
-
-        <div id="showPPandTU" class="fullScreen" hidden></div>
     </main>
 
 <!-- =========================================   F O O T E R   ========================================= -->
 
     <footer>
-        <div id="personalDataFooter" class="personalData center brdSolid rad10">
+        <div id="personalDataFooter" class="personalData center brdSolid">
             <ul class="listPersonalData">
                 <li class="age">Idade: </li>
                 <li class="email">E-mail: </li>
                 <li class="phone">Fone: </li>
             </ul>
         </div>
+
         <div id="copyright" class="center">
             <div>
                 <img id="logo" src="images/logo.webp" alt="Logotipo" title="Logotipo">
             </div>
             <div>
                 <h4>© Developed by Róger Cascaes</h4>
-                <button id="privacyPolicy" class="green">Política de privacidade</button>
-                <button id="termsUse" class="green">Termos de uso</button>
+                <button id="privacyPolicy" class="btnGreen">Política de privacidade</button>
+                <button id="termsUse" class="btnGreen">Termos de uso</button>
             </div>
         </div>
+        
         <div id="PPandTU">
-            <p>Não usamos cookies e nem outras tecnologias semelhantes, também não recomendamos conteúdo de seu interesse. Ao utilizar este site, que não possui nada útil, você concorda com nada... e as <button id="firstPrivacyPolicy" class="green">políticas de privacidade</button> e <button id="firstTermsUse" class="green">termos em uso</button>.</p>
-            <button id="understood" class="btnSubmit brdSolid rad5">Entendido</button>
+            <p>Não usamos cookies e nem outras tecnologias semelhantes, também não recomendamos conteúdo de seu interesse. Ao utilizar este site, que não possui nada útil, você concorda com nada... e as <button id="firstPrivacyPolicy" class="btnGreen">políticas de privacidade</button> e <button id="firstTermsUse" class="btnGreen">termos em uso</button>.</p>
+            <button id="btnUnderstood" class="btnSubmit brdSolid">Entendido</button>
         </div>
     </footer>
 

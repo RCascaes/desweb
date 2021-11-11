@@ -6,6 +6,14 @@
     padding: 0px;
 }
 
+:root {
+    --font-family: "Arial";
+    --primary-color:#000000;
+    --primary-font-color:#ffffff;
+    --secondary-color:#ffffff;
+    --secondary-font-color:#000000;
+}
+
 body {
     height: auto;
     font-family: var(--font-family);
@@ -23,16 +31,18 @@ body::-webkit-scrollbar-thumb {
     background-color: var(--primary-color);
 }
 
-:root {
-    --font-family: "Arial";
-    --primary-color:#000000;
-    --primary-font-color:#ffffff;
-    --secondary-color:#ffffff;
-    --secondary-font-color:#000000;
-}
-
 main {
     margin: auto;
+}
+
+p {    
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+fieldset {
+    border-width: 2px;
+    border-style: dotted;
 }
 
 fieldset > legend {
@@ -77,37 +87,6 @@ textarea::-webkit-scrollbar-thumb {
     border-radius: 5px;
 }
 
-.sectionConfiguration {
-    width: 90%;
-    min-width: 300px;
-    max-width: 900px;
-    margin-top: 10px;
-    background-color: #ddd;
-    border: 2px solid var(--secondary-color);
-    border-radius: 10px;
-}
-
-.sectionConfiguration2 {
-    width: 100%;
-    margin-top: 10px;
-    background-color: #ddd;
-    border-top: 1px solid var(--secondary-color);
-    border-bottom: 1px solid var(--secondary-color);
-}
-
-.boxContent {
-    width: 90%;
-    max-width: 900px;
-    min-width: 290px;
-    padding: 10px;
-    margin: 0px auto;
-    text-align: left;
-}
-
-#boxStart .boxContent h2, #boxProject .boxContent h2 {
-    color: var(--primary-color);
-}
-
 .center {
     position: relative;
     left: 50%;
@@ -117,29 +96,6 @@ textarea::-webkit-scrollbar-thumb {
 .brdSolid {
     border-width: 2px;
     border-style: solid;
-}
-
-.brdDotted {
-    border-width: 2px;
-    border-style: dotted;
-}
-
-.rad10 {
-    border-radius: 10px;
-}
-
-.rad5 {
-    border-radius: 5px;
-}
-
-.phaMargin {    
-    margin-top: 10px;
-    margin-left: 20px;
-}
-
-.fixedMenu {
-    position: fixed; 
-    z-index: 1;
 }
 
 /* ===========================================   H E A D E R   =========================================== */
@@ -158,6 +114,11 @@ textarea::-webkit-scrollbar-thumb {
 
 #menu {
     display: none;
+}
+
+.fixedMenu {
+    position: fixed; 
+    z-index: 1;
 }
 
 label[for="menu"] {
@@ -280,8 +241,9 @@ nav ul li {
 .personalData {
     width: max-content;
     min-width: 300px;
-    white-space: nowrap;
+    border-radius: 10px;
     padding: 10px;
+    white-space: nowrap;
 }
 
 .listPersonalData > li {
@@ -302,22 +264,35 @@ nav ul li {
 
 /* =============================================   M A I N   ============================================= */
 
-.alertRed {
-    background-color: #ffcece;
-    border-color: #f00000;
-    color: #f00000;
+.sectionConfiguration {
+    width: 90%;
+    min-width: 300px;
+    max-width: 900px;
+    margin-top: 10px;
+    background-color: #ddd;
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
 }
 
-.warningOrange {
-    background-color: #ffe4b1;
-    border-color: #f09c00;
-    color: #f09c00;
+.sectionConfiguration2 {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #ddd;
+    border-top: 1px solid var(--secondary-color);
+    border-bottom: 1px solid var(--secondary-color);
 }
 
-.submitGreen {
-    background-color: #baffb1;
-    border-color: #13a300;
-    color: #13a300;
+.boxContent {
+    width: 90%;
+    max-width: 900px;
+    min-width: 290px;
+    padding: 10px;
+    margin: 0px auto;
+    text-align: left;
+}
+
+#boxStart h2, #boxProject h2 {
+    color: var(--primary-color);
 }
 
 .fdsLabel {
@@ -336,12 +311,6 @@ nav ul li {
     line-height: 50px;
 }
 
-.boxInputColor {
-    width: auto;
-    float: left;
-    line-height: 50px;
-}
-
 .boxInput > input, select {
     width: 150px;
     height: 30px;
@@ -352,18 +321,27 @@ nav ul li {
     font-size: 15px;
 }
 
+.boxInput > input[type="color"] {
+    width: 40px;
+    height: 30px;
+    vertical-align: middle;
+    border: 2px solid #777;
+    border-radius: 5px;
+}
+
 .btnSubmit {
     width: 80%;
     max-width: 300px;
     height: 40px;
-    background-color: var(--primary-color);
+    border-radius: 5px;
     border-color: var(--primary-color);
+    background-color: var(--primary-color);
     color: var(--primary-font-color);
+    font-family: var(--font-family);
     font-size: 22px;
     font-weight: bold;
     letter-spacing: 5px;
     cursor: pointer;
-    font-family: var(--font-family);
 }
 
 .btnSubmit:hover {
@@ -372,31 +350,59 @@ nav ul li {
     color: var(--secondary-font-color);
 }
 
+.red {
+    background-color: #ffcece;
+    border-color: #f00000;
+    color: #f00000;
+}
+
+.orange {
+    background-color: #ffe4b1;
+    border-color: #f09c00;
+    color: #f09c00;
+}
+
+.green {
+    background-color: #baffb1;
+    border-color: #13a300;
+    color: #13a300;
+}
+
 /* ---------------------------------- SUGGESTION ---------------------------------- */
 
 #fdsSuggestion {
     width: 60%;
     min-width: 300px;
     margin-top: 10px;
-    background-color: #ddd;
+    border-radius: 10px;
     border-color: var(--secondary-color);
+    background-color: #ddd;
 }
 
 /* --------------------------------- CONFIGURATION -------------------------------- */
+
 #boxConfiguration {
+    margin: 0px auto;
+    max-width: 1000px;
     text-align: center;
 }
 
 .fdsConfig {
     width: 30%;
-    min-width: 300px;
-    min-height: 400px;
+    min-width: 230px;
+    min-height: 225px;
     margin: 25px 1%;
-    background-color: #ddd;
+    border-radius: 10px;
     border-color: var(--secondary-color);
+    background-color: #ddd;
     display: inline;
     vertical-align: top;
     text-align: left;
+}
+
+#configStart {
+    width: 90%;
+    max-width: 900px;
 }
 
 /* ===========================================   F O O T E R   =========================================== */
@@ -433,11 +439,11 @@ footer {
     width: 50px;
 }
 
-#copyright .green {
+#copyright .btnGreen {
     margin-top: 10px;
 }
 
-.green {
+.btnGreen {
     background-color: #ffffff00;
     border-color: #ffffff00;
     color: #37c100;
@@ -446,7 +452,7 @@ footer {
     font-family: var(--font-family);
 }
 
-.green:hover {
+.btnGreen:hover {
     color: #185300;
 }
 
@@ -461,10 +467,11 @@ footer {
 
 #PPandTU p {
     width: 75%;
+    margin: 0px;
     float: left;
 }
 
-#understood {
+#btnUnderstood {
     width: 20%;
     min-width: 175px;
     height: 40px;
@@ -475,7 +482,7 @@ footer {
     font-family: var(--font-family);
 }
 
-#understood:hover {
+#btnUnderstood:hover {
     background-color: var(--primary-color);
     border-color: var(--secondary-color);
     color: var(--primary-font-color);
@@ -493,14 +500,16 @@ footer {
 
 .secPPandTU {
     width: 80%;
+    min-width: 300px;
     height: 80%;
     padding: 10px;
     top: 50%;
     transform: translate(-50%, -50%);
     background-color: #fff;
-    border-color: #777;
     color: #777;
+    border: 2px solid var(--secondary-color);
     overflow: auto;
+    border-radius: 10px;
 }
 
 .secPPandTU::-webkit-scrollbar {
@@ -526,7 +535,6 @@ footer {
 @media(max-width: 800px) {
     
     main {
-        /* max-width: 600px; */
         margin: auto;
     }
 
@@ -560,6 +568,8 @@ footer {
         width: 100%;
         float: none;
     }
+
+/* ----------------------------------- HEADER ------------------------------------- */
 
     .backHeader {
         margin-top: 0px;
@@ -606,7 +616,7 @@ footer {
         text-align: left;
     }
 
-    #understood {
+    #btnUnderstood {
         width: 50%;
         height: 30px;
         margin-top: 15px;
